@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Result Form</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #dad7cd, #a3b18a, #588157, #3a5a40, #344e41);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(93, 109, 62, 0.3);
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            animation: slideIn 1s ease-out;
+        }
+        .container:hover{
+            transform: scale(1.02);
+            transition: .3s ease-in-out;
+        }
+        @keyframes slideIn {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .animated-border {
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #DED3B9, #5D6D3E, #DED3B9, #5D6D3E);
+            background-size: 200% 200%;
+            border-radius: 22px;
+            z-index: -1;
+            animation: borderRotate 3s linear infinite;
+        }
+        @keyframes borderRotate {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        h1 {
+            text-align: center;
+            color: #5D6D3E;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+            font-weight: 700;
+        }
+        .form-group {
+            margin-bottom: 20px;
+            animation: fadeInUp 0.8s ease forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .form-group:nth-child(1) { animation-delay: 0.1s; }
+        .form-group:nth-child(2) { animation-delay: 0.2s; }
+        .form-group:nth-child(n+3) { animation-delay: 0.3s; }
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #5D6D3E;
+            font-weight: 600;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #DED3B9;
+            border-radius: 12px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background: rgba(255,255,255,0.8);
+        }
+        input:focus {
+            outline: none;
+            border-color: #5D6D3E;
+            box-shadow: 0 0 0 3px rgba(93, 109, 62, 0.1);
+            transform: scale(1.02);
+        }
+        .marks-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        .calculate-btn {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #DED3B9 0%, #5D6D3E 100%);
+            color: #333;
+            border: none;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 20px 0;
+        }
+        .calculate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(93, 109, 62, 0.4);
+        }
+        #resultSection {
+            display: none;
+            background: linear-gradient(135deg, #DED3B9 0%, #5D6D3E 100%);
+            color: #333;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+            animation: slideDown 0.5s ease;
+        }
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        #resultSection h3 {
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            color: #5D6D3E;
+        }
+        .result-item {
+            background: rgba(255,255,255,0.7);
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+        }
+        .download-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #DED3B9 0%, #5D6D3E 100%);
+            color: #333;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(93, 109, 62, 0.4);
+        }
+        @media (max-width: 600px) {
+            .marks-group { grid-template-columns: 1fr; }
+            .container { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="animated-border"></div>
+        <h1>Mumbai University</h1>
+        <form id="resultForm">
+            <div class="form-group">
+                <label for="studentName">Student Name:</label>
+                <input type="text" id="studentName" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="studentId">Student ID:</label>
+                <input type="text" id="studentId" placeholder="Enter ID number" required>
+            </div>
+            <div class="form-group">
+                <label>Subject Marks (out of 100 each):</label>
+                <div class="marks-group">
+                    <input type="number" id="maths" placeholder="Maths" min="0" max="100" required>
+                    <input type="number" id="physics" placeholder="Physics" min="0" max="100" required>
+                    <input type="number" id="chemistry" placeholder="Chemistry" min="0" max="100" required>
+                    <input type="number" id="biology" placeholder="Biology" min="0" max="100" required>
+                    <input type="number" id="english" placeholder="English" min="0" max="100" required>
+                    <input type="number" id="hindi" placeholder="Hindi" min="0" max="100" required>
+                </div>
+            </div>
+            <button type="button" class="calculate-btn" onclick="calculateResult()">Calculate Result</button>
+        </form>
+        <div id="resultSection">
+            <h3>Result Details</h3>
+            <div id="resultContent"></div>
+            <button class="download-btn" onclick="downloadPDF()">Download PDF</button>
+        </div>
+    </div>
+
+    <script>
+        function calculateResult() {
+            const name = document.getElementById('studentName').value;
+            const id = document.getElementById('studentId').value;
+            const marks = [
+                parseFloat(document.getElementById('maths').value),
+                parseFloat(document.getElementById('physics').value),
+                parseFloat(document.getElementById('chemistry').value),
+                parseFloat(document.getElementById('biology').value),
+                parseFloat(document.getElementById('english').value),
+                parseFloat(document.getElementById('hindi').value)
+            ];
+
+            const total = marks.reduce((a, b) => a + b, 0);
+            const percentage = (total / 600) * 100;
+
+            let grade, result;
+            if (percentage >= 90) { grade = 'A+'; result = 'Pass'; }
+            else if (percentage >= 80) { grade = 'A'; result = 'Pass'; }
+            else if (percentage >= 70) { grade = 'B+'; result = 'Pass'; }
+            else if (percentage >= 60) { grade = 'B'; result = 'Pass'; }
+            else if (percentage >= 50) { grade = 'C'; result = 'Pass'; }
+            else if (percentage >= 35) { grade = 'D'; result = 'Pass'; }
+            else { grade = 'F'; result = 'Fail'; }
+
+            const resultHTML = `
+                <div class="result-item"><strong>Student Name:</strong> ${name}</div>
+                <div class="result-item"><strong>ID:</strong> ${id}</div>
+                <div class="result-item"><strong>Total Marks:</strong> ${total}/600</div>
+                <div class="result-item"><strong>Percentage:</strong> ${percentage.toFixed(2)}%</div>
+                <div class="result-item"><strong>Result:</strong> ${result}</div>
+                <div class="result-item"><strong>Grade:</strong> ${grade}</div>
+            `;
+            document.getElementById('resultContent').innerHTML = resultHTML;
+            document.getElementById('resultSection').style.display = 'block';
+        }
+
+        function downloadPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            doc.setFontSize(20);
+            doc.text('Mumbai University', 105, 20, { align: 'center' });
+            doc.setFontSize(16);
+            doc.text('Student Result Sheet', 105, 40, { align: 'center' });
+
+            const name = document.getElementById('studentName').value;
+            const id = document.getElementById('studentId').value;
+            const total = document.querySelector('#resultContent .result-item:nth-child(3)').textContent.split(': ')[1].split('/')[0];
+            const percentage = document.querySelector('#resultContent .result-item:nth-child(4)').textContent.split(': ')[1];
+            const result = document.querySelector('#resultContent .result-item:nth-child(5)').textContent.split(': ')[1];
+            const grade = document.querySelector('#resultContent .result-item:nth-child(6)').textContent.split(': ')[1];
+
+            doc.text(`Name: ${name}`, 20, 70);
+            doc.text(`ID: ${id}`, 20, 85);
+            doc.text(`Total Marks: ${total}/600`, 20, 100);
+            doc.text(`Percentage: ${percentage}`, 20, 115);
+            doc.text(`Result: ${result}`, 20, 130);
+            doc.text(`Grade: ${grade}`, 20, 145);
+
+            doc.save('result.pdf');
+        }
+    </script>
+</body>
+</html>

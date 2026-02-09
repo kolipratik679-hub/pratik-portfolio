@@ -1,0 +1,260 @@
+.contact-section{
+  background:#e9f6fa;
+  padding:230px 1px 50px 1px;
+  font-family: "Segoe UI", sans-serif;
+}
+.contact-wrapper{
+  margin:auto;
+  display:grid;
+  grid-template-columns: 1.34fr 1fr;
+  gap:50px;
+  padding: 0 40px 0 40px;
+}
+.contact-title h2{
+  font-size:42px;
+  font-weight: 400;
+  margin-bottom:10px;
+  color:#222;
+}
+.contact-title p{
+  font-size:25px;
+  color:#555;
+  margin-bottom:60px;
+  font-weight: 200;
+}
+
+/* FORM */
+.contact-form input,
+.contact-form select,
+.contact-form textarea{
+  width:100%;
+  padding:14px 15px;
+  border-radius:6px;
+  border:1px solid #ddd;
+  font-size:14px;
+}
+.contact-form textarea{height:94px; resize:none;}
+.form-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+  margin-bottom:15px;
+}
+.contact-form .full{
+  margin-bottom:15px;
+}
+
+.checkbox{
+  display:flex;
+  font-size:16px;
+  color:#444;
+  margin:15px 0 25px;
+  justify-self: start;
+  resize: none;
+}
+.checkbox input[type="checkbox"]{
+  transform: scale(0.7);
+  cursor: pointer;
+  margin-left: -67px;
+}
+
+.submit-btn{
+  background:#004f7c;
+  color:#fff;
+  border:none;
+  width:100%;
+  padding:16px;
+  font-size:15px;
+  letter-spacing:2px;
+  cursor:pointer;
+  border-radius:4px;
+}
+
+/* MAP */
+.map-box{
+  align-self: end;
+  padding-top: 148px;
+  margin-left: 157px;
+}
+
+.iframe-box{
+  background:#fff;
+  padding:5px;
+  max-width: 415px;
+}
+
+.map-box iframe{
+  width:100%;
+  height: 310px;
+  border:0;
+}
+
+
+
+
+/* TEXT ROW */
+#contactInfoBlock{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #0b5c88;
+    padding-top: 30px;
+}
+
+#contactInfoBlock .contact-row{
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+#contactInfoBlock .contact-icon{
+    font-size: 18px;
+    margin-top: 4px;
+}
+
+#contactInfoBlock .contact-text{
+    font-size: 16px;
+    line-height: 1.2;
+}
+
+#contactInfoBlock .contact-phone{
+    cursor: pointer;
+}
+
+#contactInfoBlock .contact-find{
+    margin: 18px 0 10px;
+    letter-spacing: 4px;
+    font-size: 13px;
+    font-weight: bold;
+    padding-top: 15px;
+}
+
+#contactInfoBlock .social-icons{
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+#contactInfoBlock .social-icon{
+    width: 28px;
+    height: 28px;
+    border: 1.5px solid #0b5c88;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0b5c88;
+    transition: 0.35s ease;
+    text-decoration: none;
+}
+
+#contactInfoBlock .social-icon:hover{
+    background: #0b5c88;
+    color: #fff;
+}
+
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .contact-wrapper{
+    grid-template-columns:1fr;
+    gap: 40px;
+  }
+
+  .map-box{
+    max-width: 100%;
+  }
+
+  .map-box iframe{
+    height: 260px;
+  }
+}
+
+
+
+
+
+
+
+#nl-unique{
+    width: 100%;
+    padding: 50px 40px;
+    background: #eaf6f8;
+    border-top: 1px solid #cfe6eb;
+    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+#nl-unique .nl-left{
+    max-width: 420px;
+    align-self: center;
+}
+
+#nl-unique h2{
+    margin: 0 0 6px;
+    font-size: 25px;
+    font-weight: 500;
+    color: #111;
+}
+
+#nl-unique p{
+    margin: 0;
+    font-size: 19px;
+    color: #555;
+}
+
+/* RIGHT SIDE */
+#nl-unique .nl-right{
+    display: flex;
+    flex-direction: column;
+    min-width: 420px;
+}
+
+#nl-unique input{
+    width: 100%;
+    padding: 20px;
+    border: none;
+    border-radius: 3px;
+    font-size: 18px;
+    outline: none;
+    width: 80%;
+}
+
+#nl-unique button{
+    width: 220px;
+    padding: 19px;
+    background: #014f74;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    letter-spacing: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+    width: 25%;
+}
+
+#nl-unique button:hover{
+    background: #023a54;
+    transform: translateY(-2px);
+}
+
+/* 📱 Responsive */
+@media(max-width: 900px){
+    #nl-unique{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+    }
+
+    #nl-unique .nl-right{
+        min-width: 100%;
+    }
+
+    #nl-unique button{
+        width: 100%;
+    }
+}
+

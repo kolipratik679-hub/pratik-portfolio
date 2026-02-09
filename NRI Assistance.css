@@ -1,0 +1,150 @@
+/* OUTER LIGHT GRAY CONTAINER */
+.nri-wrapper{
+  width:100%;
+  padding:40px 20px;
+  background:#f5f5f5;
+}
+
+/* INNER BACKGROUND WITH RIGHT GRADIENT */
+.nri-container{
+  max-width:1080px;
+  margin:auto;
+  background:linear-gradient(to right,#f7f7f7 68%, #ecedef);
+  border-radius:20px;
+  padding:40px;
+}
+
+/* WHITE MAIN CARD */
+.nri-card{
+  max-width:800px;
+  margin:auto;
+  background:#fff;
+  border-radius:20px;
+  padding:35.5px;
+  box-shadow:0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* TITLE */
+.nri-title{
+  text-align:center;
+  color:#0d6efd;
+  font-size:28px;
+  margin-bottom:30px;
+}
+
+/* SECTION */
+.nri-section{
+  margin-bottom:30px;
+    padding: 25px;
+}
+
+.nri-box{
+    border: 1px solid #f0f0f0;
+    border-radius: 15px;
+    margin: 24px;
+}
+
+.nri-box:hover{
+    box-shadow:0 4px 10px #97b3dc,
+    inset 1px 1px 4px grey;
+    transform: translateY(-4px);
+    transition: .3s;
+}
+
+.nri-section h3{
+  color:#0d6efd;
+  margin-bottom:10px;
+  font-size:20.4px;
+}
+
+.nri-section p{
+  color:#555;
+  line-height:1.6;
+  font-size:15px;
+}
+
+/* LIST */
+.nri-list{
+  padding-left:0;
+  list-style:none;
+}
+
+.nri-list li{
+  margin-bottom:10px;
+  font-size:14px;
+  color:#444;
+}
+
+/* CONNECT BOX */
+.nri-connect{
+  margin-top:30px;
+  background:linear-gradient(135deg,#7fe9ff,#5fa4f9);
+  border-radius:20px;
+  padding:27px;
+  text-align:center;
+  color:#fff;
+  line-height: 1.6;
+  color:#fff;
+  border: 1px solid rgba(51, 107, 154, 0.35);
+}
+
+.nri-connect:hover{
+    box-shadow:0 4px 10px #85c0d6,
+    inset 1px 1px 4px grey;
+    transform: translateY(-6px);
+    transition: .3s;
+}
+
+.nri-connect h3{
+  font-size:22px;
+  margin-bottom:10px;
+  color:#0d6efd;
+}
+
+.nri-subtext{
+  font-size:16px;
+  margin-bottom:20px;
+    color: black;
+}
+
+/* CONTACT LINKS */
+.nri-contact{
+  margin-bottom:12px;
+  font-size:15px;
+  color: black;
+  font-weight: bold;
+}
+
+.nri-contact a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+}
+
+/* BUTTON */
+.nri-btn{
+  display:inline-block;
+  margin-top:20px;
+  padding:14px 30px;
+  background:#fff;
+  color:#0d6efd;
+  border-radius:14px;
+  font-weight:600;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.nri-btn:hover{
+  transform:translateY(-2px) scale(1.02);
+  box-shadow:0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .nri-container{
+    padding:20px;
+  }
+  .nri-card{
+    padding:25px;
+  }
+}

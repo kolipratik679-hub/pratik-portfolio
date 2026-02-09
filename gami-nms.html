@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gami NMS</title>
+    
+    <link rel="stylesheet" href="responsive-navbar-snippet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="Kamdhenu Pinnacle.css">
+    
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="header">
+  <div class="header-container">
+
+    <!-- LOGO -->
+    <div class="logo">
+      <img src="bhagat_logo_resized.png" alt="Logo">
+    </div>
+
+    <!-- NAV -->
+    <nav class="navbar">
+      <div class="navbar-header">
+        <span class="navbar-title">Menu</span>
+        <button class="navbar-close" id="navbarClose">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <ul class="nav-menu">
+
+        <li><a href="bhgat.html">Home</a></li>
+
+        <li class="dropdown">
+          <a href="About Us.html">About Us <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="Award And Certificate.html">Award And Certificate</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="Properties.html">Properties <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="Residential.html">Residential</a></li>
+            <li><a href="Commercial.html">Commercial</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="Projects.html">Projects <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="Ready to Move.html">Ready to Move</a></li>
+            <li><a href="Up Coming.html">Up Coming</a></li>
+            <li><a href="Under Construction.html">Under Construction</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="Utilities.html">Utilities <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="Emi Calculator.html">Emi Calculator</a></li>
+            <li><a href="Documents Checklist.html">Documents Checklist</a></li>
+            <li><a href="Frequently Asked Questions.html">Frequently Asked Questions</a></li>
+          </ul>
+        </li>
+
+        <li><a href="NRI Assistance.html">NRI Assistance</a></li>
+        <li><a href="Contact Us.html">Contact Us</a></li>
+
+      </ul>
+    </nav>
+
+    <!-- HAMBURGER MENU -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="header-right">
+      <div class="phone">
+        <i class="fa-solid fa-phone"></i>
+        <span class="contact-number"><a href="tel:8879535104">+91 8879535104</a></span>
+      </div>
+
+
+      <!-- USER ICON -->
+      <div class="user-icon-link">
+          <i class="fa-regular fa-user" onclick="openAuthLoginModal()" style="cursor: pointer;"></i>
+      </div>
+
+      <a href="create-listing.html" class="btn-listing">Create a Listing</a>
+    </div>
+
+  </div>
+</header>
+
+
+
+
+
+
+
+
+
+
+<!-- Modal Overlay Container -->
+<div class="auth-modal-overlay" id="authModalOverlay">
+    <!-- Modal Box -->
+    <div class="auth-modal-box">
+        <!-- Close Button -->
+        <button class="auth-close-btn" id="authCloseBtn">×</button>
+        
+        <!-- Tab Header - Login/Register Tabs -->
+        <div class="auth-tab-header">
+            <button class="auth-tab-btn auth-active-tab" id="authLoginTabBtn">Login</button>
+            <button class="auth-tab-btn" id="authRegisterTabBtn">Register</button>
+        </div>
+        
+        <!-- Form Container -->
+        <div class="auth-form-container">
+            <!-- Login Form -->
+            <form class="auth-form auth-active-form" id="authLoginForm">
+                <!-- Username/Email Input -->
+                <div class="auth-input-group">
+                    <span class="auth-input-icon">👤</span>
+                    <input 
+                        type="text" 
+                        class="auth-input-field" 
+                        placeholder="Username or Email"
+                        name="login-username"
+                        required
+                    >
+                </div>
+                
+                <!-- Password Input -->
+                <div class="auth-input-group">
+                    <span class="auth-input-icon">🔒</span>
+                    <input 
+                        type="password" 
+                        class="auth-input-field" 
+                        placeholder="Password"
+                        name="login-password"
+                        required
+                    >
+                </div>
+                
+                <!-- Remember Me & Forgot Password Row -->
+                <div class="auth-remember-row">
+                    <label class="auth-remember-label">
+                        <input type="checkbox" class="auth-remember-checkbox" name="remember-me">
+                        Remember me
+                    </label>
+                    <a href="#" class="auth-forgot-link" id="authForgotLink">Lost your password?</a>
+                </div>
+                
+                <!-- Login Button -->
+                <button type="submit" class="auth-submit-btn">Login</button>
+            </form>
+            
+            <!-- Register Form -->
+            <form class="auth-form" id="authRegisterForm">
+                <!-- Username Input -->
+                <div class="auth-input-group">
+                    <span class="auth-input-icon">👤</span>
+                    <input 
+                        type="text" 
+                        class="auth-input-field" 
+                        placeholder="Username"
+                        name="register-username"
+                        required
+                    >
+                </div>
+                
+                <!-- Email Input -->
+                <div class="auth-input-group">
+                    <span class="auth-input-icon">✉️</span>
+                    <input 
+                        type="email" 
+                        class="auth-input-field" 
+                        placeholder="Email"
+                        name="register-email"
+                        required
+                    >
+                </div>
+                
+                <!-- Phone Input -->
+                <div class="auth-input-group">
+                    <span class="auth-input-icon">📞</span>
+                    <input 
+                        type="tel" 
+                        class="auth-input-field" 
+                        placeholder="Phone"
+                        name="register-phone"
+                        required
+                    >
+                </div>
+                
+                <!-- Account Type Dropdown -->
+                <div class="auth-input-group">
+                    <select class="auth-select-field" name="account-type" required>
+                        <option value="">Select your account type</option>
+                        <option value="Agent">Agent</option>
+                        <option value="Agency">Agency</option>
+                        <option value="Owner">Owner</option>
+                        <option value="Buyer">Buyer</option>
+                        <option value="Seller">Seller</option>
+                    </select>
+                </div>
+                
+                <!-- Terms and Conditions -->
+                <label class="auth-terms-label">
+                    <input type="checkbox" class="auth-terms-checkbox" name="terms" required>
+                    <span>I agree with your <a href="bhgat.html" class="auth-terms-link" target="_blank">Terms & Conditions</a></span>
+                </label>
+                
+                <!-- Register Button -->
+                <button type="submit" class="auth-submit-btn">Register</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Forgot Password Modal -->
+<div class="auth-modal-overlay" id="authForgotModalOverlay">
+    <div class="auth-modal-box" style="max-width: 500px;">
+        <!-- Close Button -->
+        <button class="auth-close-btn auth-forgot-close-btn" id="authForgotCloseBtn">×</button>
+        
+        <!-- Forgot Password Content -->
+        <div class="auth-form-container">
+            <h2 class="auth-forgot-title">Forgot Password</h2>
+            <p class="auth-forgot-description">
+                Please enter your username or email address. You will receive a link to create a new password via email.
+            </p>
+            
+            <form id="authForgotPasswordForm">
+                <!-- Email/Username Input -->
+                <div class="auth-input-group">
+                    <input 
+                        type="text" 
+                        class="auth-input-field" 
+                        placeholder="Enter your username or email address"
+                        name="forgot-email"
+                        required
+                        style="padding-left: 15px;"
+                    >
+                </div>
+                
+                <!-- Submit Button -->
+                <button type="submit" class="auth-submit-btn">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- ===== HEADER CLOSE ===== -->
+
+
+
+
+
+
+<!-- Main Container -->
+<main class="main">
+  <div class="container">
+  <!--row1-->
+    <div class="row1">
+        <img src="home icon.png" alt="" class="home_icon">
+        <div><a href="bhgat.html" class="link">Home</a></div>
+        <img src="right.png" alt="" width="18px" height="18px">
+        <div><a href="residential.html" class="link">Apartment</a></div>
+        <img src="right.png" alt="" width="18px" height="18px">
+        <div class="chandak-text">Gami NMS</div>
+        <div class="icon-wrapper">
+            <!-- Active Like -->
+            <div class="icon-box">
+                <i class="fa-regular fa-heart"></i>
+            </div>
+
+            <!-- Share -->
+            <div class="icon-box">
+                <i class="fa-solid fa-share-nodes"></i>
+            </div>
+
+                <!-- Print -->
+            <div class="icon-box">
+                <i class="fa-solid fa-print"></i>
+            </div>
+        </div>
+      </div>
+
+  <!--row2-->
+    <div class="row2">
+      <h1>Gami NMS</h1>
+      <h1>₹25,500,000</h1>
+    </div>
+ 
+  <!--row3-->
+    <div class="row3">
+      <img src="location.png" alt="">
+      <div>Palm Beach Seawooods</div>
+    </div>
+
+  <!--row4-->
+    <div class="row4">
+      <a href="under-construction.html">UNDER CONSTRUCTION</a>
+      <a href="hot-offer.html">HOT OFFER</a>
+    </div>
+
+  <!--row5-->
+    <div class="row5">
+      <img src="https://bhagatrealestate.in/wp-content/uploads/2025/09/WhatsApp-Image-2024-12-06-at-1.43.51-PM-Copy-Copy.jpeg" alt="" width="100%">
+
+<div class="card">
+  <!-- Agent Info -->
+  <div class="agent">
+    <div class="avatar"><img src="man icon.png" alt=""></div>
+    <div>
+      <div class="name">
+        👤 Amarnath Bhagat
+      </div>
+      <a href="#" class="view">View Listings</a>
+    </div>
+  </div>
+
+  <!-- Form -->
+  <form>
+    <input type="text" placeholder="Name">
+    <input type="text" placeholder="Phone">
+    <input type="email" placeholder="Email">
+
+    <textarea>Hello, I am interested in [Gami NMS]</textarea>
+
+    <select class="mySelect">
+      <option value="" disabled selected hidden>Select</option>
+      <option>I'm a buyer</option>
+      <option>I'm a tennant</option>
+      <option>I'm an agent</option>
+      <option>Other</option>
+    </select>
+
+    <p class="terms">
+      By submitting this form I agree to
+      <a href="#">Terms of Use</a>
+    </p>
+
+    <button type="submit">Send Email</button>
+  </form>
+</div>
+    </div>
+
+
+
+<!-- row6 -->  
+<div class="row6">
+
+<!-- left -->  
+  <div class="left">
+
+    <!-- first -->
+    <div class="ov-simple-wrap">
+      <h3 class="ov-title">Overview</h3>
+      <div class="ov-line"></div>
+
+      <div class="ov-row">
+        <!-- LEFT -->
+        <div class="ov-col">
+          <div class="ov-value">Residential</div>
+          <div class="ov-label">Type</div>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="ov-col ov-col-right">
+          <div class="ov-icon">🛏️</div>
+          <div>
+            <div class="ov-value">2</div>
+            <div class="ov-label">Bedrooms</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- second -->
+    <div class="desc-sec-wrap">
+      <h3 class="desc-sec-title">Description</h3>
+      <div class="desc-sec-line"></div>
+
+      <p class="desc-sec-text">
+        The Gami Project offers premium under-construction apartments in Navi Mumbai, thoughtfully designed to provide a modern lifestyle with comfort and elegance. Featuring spacious 2,3 ,4 & 5BHK residences, this development comes with world-class amenities such as a clubhouse, gym, swimming pool, and landscaped gardens. Strategically located near Palm Beach Road, Seawoods, and Belapur, the project ensures excellent connectivity to business hubs, schools, hospitals, and shopping destinations. With prices starting from ₹2.4Cr*, this hot offer presents a perfect opportunity for families and investors looking for long-term appreciation and luxury living in Navi Mumbai’s fastest-growing location. Palm Beach Touch project
+      </p>
+    </div>
+
+
+
+    <!-- third -->
+     <div class="addr-sec-box">
+
+      <div class="addr-sec-head">
+        <h3 class="addr-sec-title">Address</h3>
+
+        <a 
+          href="https://www.google.com/maps/search/?api=1&query=Chandak+Highscape+City+Sahyadri+Nagar+Chembur+East"
+          target="_blank"
+          class="addr-map-btn"
+        >
+          Open on Google Maps
+        </a>
+      </div>
+
+      <div class="addr-sec-divider"></div>
+
+      <div class="addr-info-grid">
+
+        <div class="addr-info-row">
+          <span class="addr-label">Address:</span>
+          <span class="addr-value">
+            Palm Beach Seawooods
+          </span>
+        </div>
+
+        <div class="addr-info-row">
+          <span class="addr-label">City:</span>
+          <span class="addr-value">Navi Mumbai</span>
+        </div>
+
+        <div class="addr-info-row">
+          <span class="addr-label">State/county:</span>
+          <span class="addr-value">Maharashtra</span>
+        </div>
+
+        <div class="addr-info-row">
+          <span class="addr-label">Zip/Postal Code:</span>
+          <span class="addr-value">400706</span>
+        </div>
+
+        <div class="addr-info-row">
+          <span class="addr-label">Area:</span>
+          <span class="addr-value">Seawoods</span>
+        </div>
+
+        <div class="addr-info-row">
+          <span class="addr-label">Country:</span>
+          <span class="addr-value">India</span>
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+
+    <!-- fourth -->
+<div class="prop-det-wrap">
+
+  <div class="prop-det-head">
+    <h3 class="prop-det-title">Details</h3>
+    <span class="prop-det-update">
+      Updated on September 9, 2025 at 10:50 am
+    </span>
+  </div>
+
+  <div class="prop-det-divider"></div>
+
+  <div class="prop-det-box">
+
+    <div class="prop-det-grid">
+
+      <!-- Left Column -->
+      <div class="prop-det-row">
+        <span class="prop-det-label">Price</span>
+        <span class="prop-det-value">₹25,500,000</span>
+      </div>
+
+      <div class="prop-det-row">
+        <span class="prop-det-label">Land Area</span>
+        <span class="prop-det-value">6 sqft</span>
+      </div>
+
+      <div class="prop-det-row">
+        <span class="prop-det-label">Bedrooms</span>
+        <span class="prop-det-value">2</span>
+      </div>
+
+      <div class="prop-det-row">
+        <span class="prop-det-label">Rooms</span>
+        <span class="prop-det-value">2</span>
+      </div>
+
+      <div class="prop-det-row">
+        <span class="prop-det-label">Garage</span>
+        <span class="prop-det-value">1</span>
+      </div>
+
+
+      <!-- Right Column -->    
+      <div class="prop-det-row">
+        <span class="prop-det-label">Type</span>
+        <span class="prop-det-value">Apartment</span>
+      </div>
+
+      <div class="prop-det-row">
+        <span class="prop-det-label">Property Status</span>
+        <span class="prop-det-value">under-construction</span>
+      </div>
+
+      <div class="prop-det-row">
+        <span class="prop-det-label">Building Name</span>
+        <span class="prop-det-value">Gami NMS</span>
+      </div>
+
+      <div class="prop-det-row">
+        <span class="prop-det-label">Parking</span>
+        <span class="prop-det-value">2</span>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+
+
+
+<!-- fifth -->
+<div class="prop-feat-wrap">
+
+  <h3 class="prop-feat-title">Features</h3>
+  <div class="prop-feat-divider"></div>
+
+  <div class="prop-feat-grid">
+
+    <div class="prop-feat-item">
+      <span class="prop-feat-icon">✓</span>
+      <span class="prop-feat-text">Creative centre</span>
+    </div>
+
+    <div class="prop-feat-item">
+      <span class="prop-feat-icon">✓</span>
+      <span class="prop-feat-text">Gazeebo</span>
+    </div>
+
+    <div class="prop-feat-item">
+      <span class="prop-feat-icon">✓</span>
+      <span class="prop-feat-text">Gym</span>
+    </div>
+
+    <div class="prop-feat-item">
+      <span class="prop-feat-icon">✓</span>
+      <span class="prop-feat-text">Park</span>
+    </div>
+
+    <div class="prop-feat-item">
+      <span class="prop-feat-icon">✓</span>
+      <span class="prop-feat-text">Senior citizen Area</span>
+    </div>
+
+    <div class="prop-feat-item">
+      <span class="prop-feat-icon">✓</span>
+      <span class="prop-feat-text">Sports Ground</span>
+    </div>
+
+    <div class="prop-feat-item">
+      <span class="prop-feat-icon">✓</span>
+      <span class="prop-feat-text">Swimming pool</span>
+    </div>
+
+  </div>
+
+</div>
+
+
+
+
+<!-- sixth -->
+<div class="mc-wrapper">
+  <h2>Mortgage Calculator</h2>
+  <hr>
+
+  <div class="mc-top">
+    <!-- LEFT DONUT -->
+    <div class="donut-box">
+      <div class="donut">
+        <div class="donut-inner">
+          <div class="price">₹416.68</div>
+          <div class="sub">Monthly</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT LIST -->
+    <div class="mc-list">
+      <div class="row"><span><i class="dot red"></i>Down Payment</span>₹0.15</div>
+      <div class="row"><span><i class="dot black"></i>Loan Amount</span>₹0.85</div>
+      <div class="row"><span><i class="dot pink"></i>Monthly Mortgage Payment</span>₹0.00</div>
+      <div class="row"><span><i class="dot blue"></i>Property Tax</span>₹0.00</div>
+      <div class="row"><span><i class="dot yellow"></i>Home Insurance</span>₹166.67</div>
+      <div class="row"><span><i class="dot teal"></i>PMI</span>₹0.00</div>
+      <div class="row"><span><i class="dot black"></i>Monthly HOA Fees</span>₹250.00</div>
+    </div>
+  </div>
+
+  <!-- FORM -->
+  <div class="mc-form">
+    <div class="field">
+      <label>Total Amount</label>
+      <div class="input"><span>₹</span><input value="1"></div>
+    </div>
+
+    <div class="field">
+      <label>Down Payment</label>
+      <div class="input"><span>%</span><input value="15"></div>
+    </div>
+
+    <div class="field">
+      <label>Interest Rate</label>
+      <div class="input"><span>%</span><input value="3.5"></div>
+    </div>
+
+    <div class="field">
+      <label>Loan Terms (Years)</label>
+      <div class="input"><span>📅</span><input value="20"></div>
+    </div>
+
+    <div class="field">
+      <label>Property Tax</label>
+      <div class="input"><span>%</span><input value="1.2"></div>
+    </div>
+
+    <div class="field">
+      <label>Home Insurance</label>
+      <div class="input"><span>₹</span><input value="2000"></div>
+    </div>
+
+    <div class="field">
+      <label>Monthly HOA Fees</label>
+      <div class="input"><span>₹</span><input value="250"></div>
+    </div>
+
+    <div class="field">
+      <label>PMI</label>
+      <div class="input"><span>%</span><input placeholder="PMI"></div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!-- seventh -->
+<div class="ci-wrapper">
+
+  <!-- Header -->
+  <div class="ci-header">
+    <h3>Contact Information</h3>
+    <button class="ci-view-btn">View Listings</button>
+  </div>
+  <hr>
+
+  <!-- Agent -->
+  <div class="ci-agent">
+    <div class="ci-avatar"><img src="man icon.png" alt=""></div>
+    <div class="ci-agent-name">
+      👤 Amarnath Bhagat
+    </div>
+  </div>
+
+  <!-- Enquiry -->
+  <h4 class="ci-enquiry-title">Enquire About This Property</h4>
+  <hr>
+
+  <!-- Form -->
+  <form class="ci-form">
+    <div class="ci-field">
+      <label>Name</label>
+      <input type="text" placeholder="Enter your name">
+    </div>
+
+    <div class="ci-field">
+      <label>Phone</label>
+      <input type="text" placeholder="Enter your Phone">
+    </div>
+
+    <div class="ci-field">
+      <label>Email</label>
+      <input type="email" placeholder="Enter your email">
+    </div>
+
+    <div class="ci-field">
+      <label>I'm a</label>
+      <select>
+        <option>Select</option>
+        <option>Buyer</option>
+        <option>Agent</option>
+        <option>Owner</option>
+      </select>
+    </div>
+
+    <div class="ci-field ci-full">
+      <label>Message</label>
+      <textarea rows="4">Hello, I am interested in [Gami NMS]</textarea>
+    </div>
+
+    <p class="ci-terms">
+      By submitting this form I agree to
+      <a href="#">Terms of Use</a>
+    </p>
+
+    <button type="submit" class="ci-submit">
+      Request Information
+    </button>
+  </form>
+
+</div>
+
+
+
+
+<!-- eighth -->
+<div class="rv-bar">
+  <div class="rv-left">
+    <strong>0 Review</strong>
+  </div>
+
+  <div class="rv-right">
+    <label class="rv-sort">
+      Sort by:
+      <select>
+        <option>Default Order</option>
+        <option>Newest</option>
+        <option>Oldest</option>
+      </select>
+    </label>
+
+    <button class="rv-btn">Leave a Review</button>
+  </div>
+</div>
+
+
+
+
+
+<!-- nineth -->
+<div class="lr-wrapper">
+
+  <h2 class="lr-title">Leave a Review</h2>
+  <hr class="lr-line">
+
+  <div class="lr-group">
+    <label>Email</label>
+    <input type="email" placeholder="you@example.com">
+  </div>
+
+  <div class="lr-row">
+    <div class="lr-group">
+      <label>Title</label>
+      <input type="text" placeholder="Enter a title">
+    </div>
+
+    <div class="lr-group">
+      <label>Rating</label>
+      <select>
+        <option>Select</option>
+        <option>1 Star</option>
+        <option>2 Star</option>
+        <option>3 Star</option>
+        <option>4 Star</option>
+        <option>5 Star</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="lr-group">
+    <label>Review</label>
+    <textarea placeholder="Write a review"></textarea>
+  </div>
+
+  <button class="lr-btn">Submit Review</button>
+
+</div>
+
+
+
+
+
+  <!-- left end div -->  
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- right -->
+  <div class="right">
+    <!-- right --> 
+    <div class="right">
+      <div class="card2">
+  <!-- Agent Info -->
+<div class="agent">
+    <div class="avatar"><img src="man icon.png" alt=""></div>
+    <div>
+      <div class="name">
+        👤 Amarnath Bhagat
+      </div>
+      <a href="#" class="view">View Listings</a>
+    </div>
+  </div>
+
+  <!-- Form -->
+  <form>
+    <input type="text" placeholder="Name">
+    <input type="text" placeholder="Phone">
+    <input type="email" placeholder="Email">
+
+    <textarea>Hello, I am interested in [Gami NMS]</textarea>
+
+    <select class="mySelect">
+      <option value="" disabled selected hidden>Select</option>
+      <option>I'm a buyer</option>
+      <option>I'm a tennant</option>
+      <option>I'm an agent</option>
+      <option>Other</option>
+    </select>
+
+    <p class="terms">
+      By submitting this form I agree to
+      <a href="#">Terms of Use</a>
+    </p>
+
+    <button type="submit">Send Email</button>
+  </form>
+</div>
+  </div>
+
+<!-- row6 end div -->
+</div>
+  </div>
+</main>
+<!-- Main end -->
+
+
+
+
+<!--===== SIDE BUTTON =====-->
+<div class="fam-container" id="famMenuBox">
+
+  <!-- 📞 CALL -->
+  <a href="tel:7304810459" class="fam-menu">
+    <img class="fam-icon" src="phone png.png" alt="Call">
+  </a>
+
+  <!-- 💬 WHATSAPP -->
+  <a href="https://wa.me/917304810459" target="_blank" class="fam-menu">
+    <img class="fam-icon" src="whatsapp png.png" alt="WhatsApp">
+  </a>
+
+  <!-- 🔄 MAIN BUTTON -->
+  <div class="fam-main-wrapper" id="famMainBtn">
+
+    <!-- First Image -->
+    <img class="fam-icon fam-main" src="menu png.png">
+
+    <!-- Second Image -->
+    <img class="fam-icon fam-swap" src="cancel png.png">
+
+  </div>
+
+</div>
+
+<script>
+const famBox = document.getElementById("famMenuBox");
+const famMainBtn = document.getElementById("famMainBtn");
+
+famMainBtn.addEventListener("click", ()=>{
+  famBox.classList.toggle("fam-active");
+});
+</script>
+
+
+
+<!--===== FOOTER =====-->
+<footer>
+  <div class="footer-left">
+      © Scorpflow - All <br> rights reserved
+  </div>
+
+  <div class="footer-right">
+      <a href="bhgat.html">Home</a>
+      <a href="About Us.html">About Us</a>
+      <a href="Award And Certificate.html">Awards and Certificates</a>
+      <a href="Commercial.html">Commercial</a>
+      <a href="compare.html">Compare</a>
+      <a href="Contact Us.html">Contact Us</a>
+      <a href="Documents Checklist.html">Documents Checklist</a>
+      <a href="Emi Calculator.html">Emi Calculator</a>
+      <a href="Frequently Asked Questions.html">Frequently Asked Questions</a>
+      <a href="NRI Assistance.html">NRI Assitance</a>
+      <a href="Properties.html">Properties</a>
+      <a href="Ready to Move.html">Ready to Move</a>
+      <a href="Under Construction.html">Under Construction</a>
+      <a href="Up Coming.html">Up Coming</a>
+  </div>
+</footer>
+
+
+ <!-- USER ICON -->
+<script>
+  // USER ICON
+// ============================================
+// LOGIN/REGISTER MODAL JAVASCRIPT
+// Auth Modal System - All functionality
+// ============================================
+
+// Get all modal elements
+const authModalOverlay = document.getElementById('authModalOverlay');
+const authForgotModalOverlay = document.getElementById('authForgotModalOverlay');
+const authCloseBtn = document.getElementById('authCloseBtn');
+const authForgotCloseBtn = document.getElementById('authForgotCloseBtn');
+const authLoginTabBtn = document.getElementById('authLoginTabBtn');
+const authRegisterTabBtn = document.getElementById('authRegisterTabBtn');
+const authLoginForm = document.getElementById('authLoginForm');
+const authRegisterForm = document.getElementById('authRegisterForm');
+const authForgotLink = document.getElementById('authForgotLink');
+const authForgotPasswordForm = document.getElementById('authForgotPasswordForm');
+
+// ========================================
+// OPEN MODAL FUNCTIONS
+// ========================================
+
+/**
+ * Open Login Modal
+ * Call this function from your user icon: onclick="openAuthLoginModal()"
+ */
+function openAuthLoginModal() {
+    authModalOverlay.classList.add('auth-active');
+    // Switch to login tab
+    authLoginTabBtn.classList.add('auth-active-tab');
+    authRegisterTabBtn.classList.remove('auth-active-tab');
+    authLoginForm.classList.add('auth-active-form');
+    authRegisterForm.classList.remove('auth-active-form');
+    // Prevent body scroll when modal is open
+    document.body.style.overflow = 'hidden';
+}
+
+/**
+ * Open Register Modal
+ * Call this function if needed: onclick="openAuthRegisterModal()"
+ */
+function openAuthRegisterModal() {
+    authModalOverlay.classList.add('auth-active');
+    // Switch to register tab
+    authRegisterTabBtn.classList.add('auth-active-tab');
+    authLoginTabBtn.classList.remove('auth-active-tab');
+    authRegisterForm.classList.add('auth-active-form');
+    authLoginForm.classList.remove('auth-active-form');
+    // Prevent body scroll when modal is open
+    document.body.style.overflow = 'hidden';
+}
+
+// ========================================
+// CLOSE MODAL FUNCTIONS
+// ========================================
+
+/**
+ * Close Auth Modal (Login/Register)
+ */
+function closeAuthModal() {
+    authModalOverlay.classList.remove('auth-active');
+    // Restore body scroll
+    document.body.style.overflow = 'auto';
+}
+
+/**
+ * Close Forgot Password Modal
+ */
+function closeAuthForgotModal() {
+    authForgotModalOverlay.classList.remove('auth-active');
+    document.body.style.overflow = 'auto';
+}
+
+// ========================================
+// EVENT LISTENERS - Close Buttons
+// ========================================
+
+// Close button for main auth modal
+authCloseBtn.addEventListener('click', closeAuthModal);
+
+// Close button for forgot password modal
+authForgotCloseBtn.addEventListener('click', closeAuthForgotModal);
+
+// Close modal when clicking outside the modal box
+authModalOverlay.addEventListener('click', function(e) {
+    if (e.target === authModalOverlay) {
+        closeAuthModal();
+    }
+});
+
+authForgotModalOverlay.addEventListener('click', function(e) {
+    if (e.target === authForgotModalOverlay) {
+        closeAuthForgotModal();
+    }
+});
+
+// Close modal with Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeAuthModal();
+        closeAuthForgotModal();
+    }
+});
+
+// ========================================
+// TAB SWITCHING FUNCTIONALITY
+// ========================================
+
+// Switch to Login Tab
+authLoginTabBtn.addEventListener('click', function() {
+    // Update tab buttons
+    authLoginTabBtn.classList.add('auth-active-tab');
+    authRegisterTabBtn.classList.remove('auth-active-tab');
+    
+    // Update forms
+    authLoginForm.classList.add('auth-active-form');
+    authRegisterForm.classList.remove('auth-active-form');
+});
+
+// Switch to Register Tab
+authRegisterTabBtn.addEventListener('click', function() {
+    // Update tab buttons
+    authRegisterTabBtn.classList.add('auth-active-tab');
+    authLoginTabBtn.classList.remove('auth-active-tab');
+    
+    // Update forms
+    authRegisterForm.classList.add('auth-active-form');
+    authLoginForm.classList.remove('auth-active-form');
+});
+
+// ========================================
+// FORGOT PASSWORD LINK
+// ========================================
+
+authForgotLink.addEventListener('click', function(e) {
+    e.preventDefault();
+    // Close main auth modal
+    closeAuthModal();
+    // Open forgot password modal
+    authForgotModalOverlay.classList.add('auth-active');
+    document.body.style.overflow = 'hidden';
+});
+
+// ========================================
+// FORM SUBMISSIONS
+// Handle form submissions (customize these as needed)
+// ========================================
+
+// Login Form Submission
+authLoginForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Get form data
+    const formData = new FormData(authLoginForm);
+    const username = formData.get('login-username');
+    const password = formData.get('login-password');
+    const rememberMe = formData.get('remember-me');
+    
+    console.log('Login Form Submitted:');
+    console.log('Username:', username);
+    console.log('Password:', password);
+    console.log('Remember Me:', rememberMe ? 'Yes' : 'No');
+    
+    // TODO: Add your login API call here
+    // Example:
+    // fetch('/api/login', {
+    //     method: 'POST',
+    //     headers: { 'Content-Type': 'application/json' },
+    //     body: JSON.stringify({ username, password, rememberMe })
+    // })
+    // .then(response => response.json())
+    // .then(data => {
+    //     if (data.success) {
+    //         closeAuthModal();
+    //         window.location.href = '/dashboard';
+    //     } else {
+    //         alert('Invalid credentials');
+    //     }
+    // })
+    // .catch(error => {
+    //     console.error('Login error:', error);
+    //     alert('An error occurred during login');
+    // });
+    
+    alert('Login form submitted! Check console for details.');
+    // Remove this alert and uncomment the API call above for production
+});
+
+// Register Form Submission
+authRegisterForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Get form data
+    const formData = new FormData(authRegisterForm);
+    const username = formData.get('register-username');
+    const email = formData.get('register-email');
+    const phone = formData.get('register-phone');
+    const accountType = formData.get('account-type');
+    const termsAccepted = formData.get('terms');
+    
+    console.log('Register Form Submitted:');
+    console.log('Username:', username);
+    console.log('Email:', email);
+    console.log('Phone:', phone);
+    console.log('Account Type:', accountType);
+    console.log('Terms Accepted:', termsAccepted ? 'Yes' : 'No');
+    
+    // TODO: Add your registration API call here
+    // Example:
+    // fetch('/api/register', {
+    //     method: 'POST',
+    //     headers: { 'Content-Type': 'application/json' },
+    //     body: JSON.stringify({ 
+    //         username, 
+    //         email, 
+    //         phone, 
+    //         accountType, 
+    //         termsAccepted 
+    //     })
+    // })
+    // .then(response => response.json())
+    // .then(data => {
+    //     if (data.success) {
+    //         closeAuthModal();
+    //         alert('Registration successful! Please check your email.');
+    //     } else {
+    //         alert(data.message || 'Registration failed');
+    //     }
+    // })
+    // .catch(error => {
+    //     console.error('Registration error:', error);
+    //     alert('An error occurred during registration');
+    // });
+    
+    alert('Registration form submitted! Check console for details.');
+    // Remove this alert and uncomment the API call above for production
+});
+
+// Forgot Password Form Submission
+authForgotPasswordForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Get form data
+    const formData = new FormData(authForgotPasswordForm);
+    const email = formData.get('forgot-email');
+    
+    console.log('Forgot Password Form Submitted:');
+    console.log('Email:', email);
+    
+    // TODO: Add your forgot password API call here
+    // Example:
+    // fetch('/api/forgot-password', {
+    //     method: 'POST',
+    //     headers: { 'Content-Type': 'application/json' },
+    //     body: JSON.stringify({ email })
+    // })
+    // .then(response => response.json())
+    // .then(data => {
+    //     if (data.success) {
+    //         alert('Password reset link sent to: ' + email);
+    //         closeAuthForgotModal();
+    //     } else {
+    //         alert(data.message || 'Email not found');
+    //     }
+    // })
+    // .catch(error => {
+    //     console.error('Forgot password error:', error);
+    //     alert('An error occurred');
+    // });
+    
+    alert('Password reset link will be sent to: ' + email);
+    closeAuthForgotModal();
+    // Remove this alert and uncomment the API call above for production
+});
+
+</script>
+
+ <script src="responsive-navbar-snippet.js"></script>   
+
+
+</body>
+</html>

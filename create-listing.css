@@ -1,0 +1,328 @@
+        /* Login Required Message Box */
+        .auth-login-required-box {
+            background: whitesmoke;
+            padding: 45px;
+            margin: 0;
+        }
+
+        .auth-login-message-container {
+            background: white;
+            padding: 25px 30px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .auth-login-message-text {
+            font-size: 16px;
+            color: #333;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .auth-login-message-text strong {
+            font-weight: 600;
+            color: #000;
+        }
+
+        .auth-login-trigger-link {
+            color: #00b4ff;
+            text-decoration: none;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .auth-login-trigger-link:hover {
+            color: #0096d9;
+        }
+
+        /* Auth Modal Container - Main overlay background */
+        .auth-modal-overlay {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent dark background */
+            backdrop-filter: blur(1px); /* Blur effect on background */
+            z-index: 9999; /* Ensure it's on top of everything */
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Show modal when active */
+        .auth-modal-overlay.auth-active {
+            display: flex;
+        }
+
+        /* Modal Box - White container for forms */
+        .auth-modal-box {
+            background: white;
+            width: 90%;
+            max-width: 430px;
+            border-radius: 8px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            position: relative;
+            animation: authModalSlideIn 0.3s ease-out;
+        }
+
+        /* Slide in animation for modal */
+        @keyframes authModalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Close button (X) */
+
+        .auth-close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+            z-index: 99999;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            border-radius: 50%;
+            font-weight: bold;
+            line-height: 1;
+            padding: 0;
+        }
+
+        .auth-close-btn:hover {
+            background: rgba(0, 0, 0, 0.5);
+            transform: rotate(90deg) scale(1.1);
+            border-color: rgba(255, 255, 255, 0.8);
+        }
+
+        
+
+        /* Tab Header - Login/Register tabs */
+        .auth-tab-header {
+            display: flex;
+            background: white;
+        }
+
+        .auth-tab-btn {
+            flex: 1;
+            padding: 18px 20px;
+            border: none;
+            background: white;
+            color: #666;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-bottom: 3px solid transparent;
+        }
+
+        .auth-tab-btn.auth-active-tab {
+            background: #00b4ff; /* Bright blue for active tab */
+            color: white;
+            border-bottom: 3px solid #0096d9;
+        }
+
+        /* Form Container */
+        .auth-form-container {
+            padding: 35px 30px;
+        }
+
+        /* Hide inactive forms */
+        .auth-form {
+            display: none;
+        }
+
+        .auth-form.auth-active-form {
+            display: block;
+            animation: authFadeIn 0.3s ease-in;
+        }
+
+        @keyframes authFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Input Group - Wrapper for each input field */
+        .auth-input-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        /* Input Fields */
+        .auth-input-field {
+            width: 100%;
+            padding: 12px 15px 12px 45px; /* Extra padding on left for icon */
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 15px;
+            transition: border-color 0.3s;
+            box-sizing: border-box;
+        }
+
+        .auth-input-field:focus {
+            outline: none;
+            border-color: #00b4ff;
+        }
+
+        .auth-input-field::placeholder {
+            color: #999;
+        }
+
+        /* Input Icons */
+        .auth-input-icon {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+            font-size: 16px;
+        }
+
+        /* Remember me and Forgot password row */
+        .auth-remember-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        /* Remember me checkbox */
+        .auth-remember-label {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            color: #666;
+            cursor: pointer;
+        }
+
+        .auth-remember-checkbox {
+            margin-right: 8px;
+            cursor: pointer;
+        }
+
+        /* Forgot password link */
+        .auth-forgot-link {
+            color: #00b4ff;
+            text-decoration: none;
+            font-size: 14px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .auth-forgot-link:hover {
+            color: #0096d9;
+        }
+
+        /* Submit Button */
+        .auth-submit-btn {
+            width: 100%;
+            padding: 14px;
+            background: #00b4ff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .auth-submit-btn:hover {
+            background: #0096d9;
+        }
+
+        /* Dropdown Select */
+        .auth-select-field {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 15px;
+            color: #666;
+            cursor: pointer;
+            background: white;
+            transition: border-color 0.3s;
+            box-sizing: border-box;
+        }
+
+        .auth-select-field:focus {
+            outline: none;
+            border-color: #00b4ff;
+        }
+
+        /* Terms and conditions checkbox */
+        .auth-terms-label {
+            display: flex;
+            align-items: flex-start;
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 25px;
+            cursor: pointer;
+        }
+
+        .auth-terms-checkbox {
+            margin-right: 8px;
+            margin-top: 3px;
+            cursor: pointer;
+        }
+
+        .auth-terms-link {
+            color: #00b4ff;
+        }
+
+        /* Forgot Password Modal Specific Styles */
+        .auth-forgot-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .auth-forgot-description {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            .auth-modal-box {
+                width: 95%;
+            }
+
+            .auth-form-container {
+                padding: 25px 20px;
+            }
+
+            .auth-tab-btn {
+                font-size: 14px;
+                padding: 15px 15px;
+            }
+
+            .auth-login-required-box {
+                padding: 20px 15px;
+            }
+
+            .auth-login-message-container {
+                padding: 20px;
+            }
+
+            .auth-login-message-text {
+                font-size: 15px;
+            }
+        }

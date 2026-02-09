@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ready to Move</title>
+
+    <link rel="stylesheet" href="bhagat.css">
+    <link rel="stylesheet" href="Ready to Move.css">
+    <link rel="stylesheet" href="responsive-navbar-snippet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="header">
+  <div class="header-container">
+
+    <!-- LOGO -->
+    <div class="logo">
+      <img src="bhagat_logo_resized.png" alt="Logo">
+    </div>
+
+    <!-- NAV -->
+    <nav class="navbar">
+      <div class="navbar-header">
+        <span class="navbar-title">Menu</span>
+        <button class="navbar-close" id="navbarClose">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <ul class="nav-menu">
+
+        <li><a href="bhgat.html">Home</a></li>
+
+        <li class="dropdown">
+          <a href="About Us.html">About Us <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="Award And Certificate.html">Award And Certificate</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="Properties.html">Properties <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="Residential.html">Residential</a></li>
+            <li><a href="Commercial.html">Commercial</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="Projects.html">Projects <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="Ready to Move.html">Ready to Move</a></li>
+            <li><a href="Up Coming.html">Up Coming</a></li>
+            <li><a href="Under Construction.html">Under Construction</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="Utilities.html">Utilities <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="Emi Calculator.html">Emi Calculator</a></li>
+            <li><a href="Documents Checklist.html">Documents Checklist</a></li>
+            <li><a href="Frequently Asked Questions.html">Frequently Asked Questions</a></li>
+          </ul>
+        </li>
+
+        <li><a href="NRI Assistance.html">NRI Assistance</a></li>
+        <li><a href="Contact Us.html">Contact Us</a></li>
+
+      </ul>
+    </nav>
+
+    <!-- HAMBURGER MENU -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="header-right">
+      <div class="phone">
+        <i class="fa-solid fa-phone"></i>
+        <span class="contact-number"><a href="tel:8879535104">+91 8879535104</a></span>
+      </div>
+
+
+      <!-- USER ICON -->
+      <div class="user-icon-link">
+          <i class="fa-regular fa-user" onclick="openAuthLoginModal()" style="cursor: pointer;"></i>
+      </div>
+
+      <a href="create-listing.html" class="btn-listing">Create a Listing</a>
+    </div>
+
+  </div>
+</header>
+
+
+
+
+
+
+
+
+
+
+<!-- Modal Overlay Container -->
+<div class="auth-modal-overlay" id="authModalOverlay">
+    <!-- Modal Box -->
+    <div class="auth-modal-box">
+        <!-- Close Button -->
+        <button class="auth-close-btn" id="authCloseBtn">×</button>
+        
+        <!-- Tab Header - Login/Register Tabs -->
+        <div class="auth-tab-header">
+            <button class="auth-tab-btn auth-active-tab" id="authLoginTabBtn">Login</button>
+            <button class="auth-tab-btn" id="authRegisterTabBtn">Register</button>
+        </div>
+        
+        <!-- Form Container -->
+        <div class="auth-form-container">
+            <!-- Login Form -->
+            <form class="auth-form auth-active-form" id="authLoginForm">
+                <!-- Username/Email Input -->
+                <div class="auth-input-group">
+                    <span class="auth-input-icon">👤</span>
+                    <input 
+                        type="text" 
+                        class="auth-input-field" 
+                        placeholder="Username or Email"
+                        name="login-username"
+                        required
+                    >
+                </div>
+                
+                <!-- Password Input -->
+                <div class="auth-input-group">
+                    <span class="auth-input-icon">🔒</span>
+                    <input 
+                        type="password" 
+                        class="auth-input-field" 
+                        placeholder="Password"
+                        name="login-password"
+                        required
+                    >
+                </div>
+                
+                <!-- Remember Me & Forgot Password Row -->
+                <div class="auth-remember-row">
+                    <label class="auth-remember-label">
+                        <input type="checkbox" class="auth-remember-checkbox" name="remember-me">
+                        Remember me
+                    </label>
+                    <a href="#" class="auth-forgot-link" id="authForgotLink">Lost your password?</a>
+                </div>
+                
+                <!-- Login Button -->
+                <button type="submit" class="auth-submit-btn">Login</button>
+            </form>
+            
+            <!-- Register Form -->
+            <form class="auth-form" id="authRegisterForm">
+                <!-- Username Input -->
+                <div class="auth-input-group">
+                    <span class="auth-input-icon">👤</span>
+                    <input 
+                        type="text" 
+                        class="auth-input-field" 
+                        placeholder="Username"
+                        name="register-username"
+                        required
+                    >
+                </div>
+                
+                <!-- Email Input -->
+                <div class="auth-input-group">
+                    <span class="auth-input-icon">✉️</span>
+                    <input 
+                        type="email" 
+                        class="auth-input-field" 
+                        placeholder="Email"
+                        name="register-email"
+                        required
+                    >
+                </div>
+                
+                <!-- Phone Input -->
+                <div class="auth-input-group">
+                    <span class="auth-input-icon">📞</span>
+                    <input 
+                        type="tel" 
+                        class="auth-input-field" 
+                        placeholder="Phone"
+                        name="register-phone"
+                        required
+                    >
+                </div>
+                
+                <!-- Account Type Dropdown -->
+                <div class="auth-input-group">
+                    <select class="auth-select-field" name="account-type" required>
+                        <option value="">Select your account type</option>
+                        <option value="Agent">Agent</option>
+                        <option value="Agency">Agency</option>
+                        <option value="Owner">Owner</option>
+                        <option value="Buyer">Buyer</option>
+                        <option value="Seller">Seller</option>
+                    </select>
+                </div>
+                
+                <!-- Terms and Conditions -->
+                <label class="auth-terms-label">
+                    <input type="checkbox" class="auth-terms-checkbox" name="terms" required>
+                    <span>I agree with your <a href="bhgat.html" class="auth-terms-link" target="_blank">Terms & Conditions</a></span>
+                </label>
+                
+                <!-- Register Button -->
+                <button type="submit" class="auth-submit-btn">Register</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Forgot Password Modal -->
+<div class="auth-modal-overlay" id="authForgotModalOverlay">
+    <div class="auth-modal-box" style="max-width: 500px;">
+        <!-- Close Button -->
+        <button class="auth-close-btn auth-forgot-close-btn" id="authForgotCloseBtn">×</button>
+        
+        <!-- Forgot Password Content -->
+        <div class="auth-form-container">
+            <h2 class="auth-forgot-title">Forgot Password</h2>
+            <p class="auth-forgot-description">
+                Please enter your username or email address. You will receive a link to create a new password via email.
+            </p>
+            
+            <form id="authForgotPasswordForm">
+                <!-- Email/Username Input -->
+                <div class="auth-input-group">
+                    <input 
+                        type="text" 
+                        class="auth-input-field" 
+                        placeholder="Enter your username or email address"
+                        name="forgot-email"
+                        required
+                        style="padding-left: 15px;"
+                    >
+                </div>
+                
+                <!-- Submit Button -->
+                <button type="submit" class="auth-submit-btn">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- ===== HEADER CLOSE ===== -->
+
+
+
+
+
+
+<!--===== SIDE BUTTON =====-->
+<div class="fam-container" id="famMenuBox">
+
+  <!-- 📞 CALL -->
+  <a href="tel:7304810459" class="fam-menu">
+    <img class="fam-icon" src="phone png.png" alt="Call">
+  </a>
+
+  <!-- 💬 WHATSAPP -->
+  <a href="https://wa.me/917304810459" target="_blank" class="fam-menu">
+    <img class="fam-icon" src="whatsapp png.png" alt="WhatsApp">
+  </a>
+
+  <!-- 🔄 MAIN BUTTON -->
+  <div class="fam-main-wrapper" id="famMainBtn">
+
+    <!-- First Image -->
+    <img class="fam-icon fam-main" src="menu png.png">
+
+    <!-- Second Image -->
+    <img class="fam-icon fam-swap" src="cancel png.png">
+
+  </div>
+
+</div>
+
+<script>
+const famBox = document.getElementById("famMenuBox");
+const famMainBtn = document.getElementById("famMainBtn");
+
+famMainBtn.addEventListener("click", ()=>{
+  famBox.classList.toggle("fam-active");
+});
+</script>
+
+
+
+
+
+
+
+
+<!-- MAIN -->
+<h1 class="rtm-page-title">Ready to Move properties</h1>
+
+<div class="rtm-listing-wrapper">
+
+<!-- PROPERTY 1 -->
+<div class="rtm-property-card">
+
+  <div class="rtm-image-box">
+    <div class="rtm-image-main">
+      <img src="https://bhagatrealestate.in/wp-content/uploads/2025/09/WhatsApp-Image-2024-06-09-at-12.49.39-584x438.jpeg" alt="">
+      <div class="rtm-image-actions">
+        <a href="#" class="rtm-action-btn rtm-share-btn" data-label="Preview" title="Preview">
+          <i class="fa-solid fa-expand"></i>
+        </a>
+        <a href="#" class="rtm-action-btn rtm-heart-btn" data-label="Favourite" title="Add to Favorites">
+          <i class="fa-regular fa-heart"></i>
+        </a>
+        <a href="#" class="rtm-action-btn rtm-compare-btn" data-label="Add to Compare" title="Compare">
+          <i class="fa-solid fa-arrows-left-right"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="rtm-small-images">
+      <div class="rtm-image-small">
+        <img src="https://bhagatrealestate.in/wp-content/uploads/2025/09/WhatsApp-Image-2024-11-29-at-5.12.01-PM-2-584x438.jpeg" alt="">
+      </div>
+      <div class="rtm-image-small">
+        <img src="https://bhagatrealestate.in/wp-content/uploads/2025/09/WhatsApp-Image-2024-11-29-at-5.12.01-PM-584x438.jpeg" alt="">
+      </div>
+    </div>
+  </div>
+
+  <div class="rtm-details">
+    <div>
+      <div class="rtm-badges">
+        <span class="rtm-badge"><a href="for-sale.html">FOR SALE</a></span>
+        <span class="rtm-badge"><a href="ready-to-move.html">READY TO MOVE</a></span>
+      </div>
+
+      <h2><a href="lt-seawoods.html">L&T Seawoods Residence</a></h2>
+      <div class="rtm-location"><i class="fa-solid fa-location-dot"></i> Seawoods</div>
+
+      <div class="rtm-price">₹39,000,000</div>
+
+      <div class="rtm-features">
+        <span>🛏 3</span>
+      </div>
+
+      <div class="rtm-type">RESIDENTIAL</div>
+    </div>
+
+    <div class="rtm-agent">
+      <div class="rtm-agent-info">
+        <div class="rtm-agent-img">
+          <img src="man icon.png" alt="">
+        </div>
+        <span>Amarnath Bhagat</span>
+      </div>
+      <a href="email-btn.html" class="rtm-email-btn">✉ Email</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- PROPERTY 2 -->
+<div class="rtm-property-card">
+
+  <div class="rtm-image-box">
+    <div class="rtm-image-main">
+      <img src="https://bhagatrealestate.in/wp-content/uploads/2025/09/Project-Photo-32-Moreshwar-19-East-Navi-Mumbai-5213591_1500_2000-1-1536x1152.jpg" alt="">
+      <div class="rtm-image-actions">
+        <a href="#" class="rtm-action-btn rtm-share-btn" data-label="Preview" title="Preview">
+          <i class="fa-solid fa-expand"></i>
+        </a>
+        <a href="#" class="rtm-action-btn rtm-heart-btn" data-label="Favourite" title="Add to Favorites">
+          <i class="fa-regular fa-heart"></i>
+        </a>
+        <a href="#" class="rtm-action-btn rtm-compare-btn" data-label="Add to Compare" title="Compare">
+          <i class="fa-solid fa-arrows-left-right"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="rtm-small-images">
+      <div class="rtm-image-small">
+        <img src="https://bhagatrealestate.in/wp-content/uploads/2025/09/Floor-Plan-20-Moreshwar-19-East-Navi-Mumbai-5213591_523_541-541x438.jpg" alt="">
+      </div>
+      <div class="rtm-image-small">
+        <img src="https://bhagatrealestate.in/wp-content/uploads/2025/09/Floor-Plan-23-Moreshwar-19-East-Navi-Mumbai-5213591_544_541-541x438.jpg" alt="">
+      </div>
+    </div>
+  </div>
+
+  <div class="rtm-details">
+    <div>
+      <div class="rtm-badges">
+        <span class="rtm-badge"><a href="for-sale.html">FOR SALE</a></span>
+        <span class="rtm-badge"><a href="ready-to-move.html">READY TO MOVE</a></span>
+      </div>
+
+      <h2><a href="19-east-moreshwar.html">19 East Moreshwar</a></h2>
+      <div class="rtm-location"><i class="fa-solid fa-location-dot"></i> Nerul east</div>
+
+      <div class="rtm-price">₹32,500,000</div>
+
+      <div class="rtm-features">
+        <span>🛏 3</span>
+        <span>🚿 3</span>
+      </div>
+
+      <div class="rtm-type">RESIDENTIAL</div>
+    </div>
+
+    <div class="rtm-agent">
+      <div class="rtm-agent-info">
+        <div class="rtm-agent-img">
+          <img src="man icon.png" alt="">
+        </div>
+        <span>Amarnath Bhagat</span>
+      </div>
+      <a href="email-btn.html" class="rtm-email-btn">✉ Email</a>
+    </div>
+  </div>
+
+</div>
+
+</div>
+<!-- END -->
+
+
+
+
+
+<!--===== FOOTER =====-->
+<footer>
+  <div class="footer-left">
+      © Scorpflow - All <br> rights reserved
+  </div>
+
+  <div class="footer-right">
+      <a href="bhgat.html">Home</a>
+      <a href="About Us.html">About Us</a>
+      <a href="Award And Certificate.html">Awards and Certificates</a>
+      <a href="Commercial.html">Commercial</a>
+      <a href="compare.html">Compare</a>
+      <a href="Contact Us.html">Contact Us</a>
+      <a href="Documents Checklist.html">Documents Checklist</a>
+      <a href="Emi Calculator.html">Emi Calculator</a>
+      <a href="Frequently Asked Questions.html">Frequently Asked Questions</a>
+      <a href="NRI Assistance.html">NRI Assitance</a>
+      <a href="Properties.html">Properties</a>
+      <a href="Ready to Move.html">Ready to Move</a>
+      <a href="Under Construction.html">Under Construction</a>
+      <a href="Up Coming.html">Up Coming</a>
+  </div>
+</footer>
+
+
+ <!-- USER ICON -->
+<script>
+  // USER ICON
+// ============================================
+// LOGIN/REGISTER MODAL JAVASCRIPT
+// Auth Modal System - All functionality
+// ============================================
+
+// Get all modal elements
+const authModalOverlay = document.getElementById('authModalOverlay');
+const authForgotModalOverlay = document.getElementById('authForgotModalOverlay');
+const authCloseBtn = document.getElementById('authCloseBtn');
+const authForgotCloseBtn = document.getElementById('authForgotCloseBtn');
+const authLoginTabBtn = document.getElementById('authLoginTabBtn');
+const authRegisterTabBtn = document.getElementById('authRegisterTabBtn');
+const authLoginForm = document.getElementById('authLoginForm');
+const authRegisterForm = document.getElementById('authRegisterForm');
+const authForgotLink = document.getElementById('authForgotLink');
+const authForgotPasswordForm = document.getElementById('authForgotPasswordForm');
+
+// ========================================
+// OPEN MODAL FUNCTIONS
+// ========================================
+
+/**
+ * Open Login Modal
+ * Call this function from your user icon: onclick="openAuthLoginModal()"
+ */
+function openAuthLoginModal() {
+    authModalOverlay.classList.add('auth-active');
+    // Switch to login tab
+    authLoginTabBtn.classList.add('auth-active-tab');
+    authRegisterTabBtn.classList.remove('auth-active-tab');
+    authLoginForm.classList.add('auth-active-form');
+    authRegisterForm.classList.remove('auth-active-form');
+    // Prevent body scroll when modal is open
+    document.body.style.overflow = 'hidden';
+}
+
+/**
+ * Open Register Modal
+ * Call this function if needed: onclick="openAuthRegisterModal()"
+ */
+function openAuthRegisterModal() {
+    authModalOverlay.classList.add('auth-active');
+    // Switch to register tab
+    authRegisterTabBtn.classList.add('auth-active-tab');
+    authLoginTabBtn.classList.remove('auth-active-tab');
+    authRegisterForm.classList.add('auth-active-form');
+    authLoginForm.classList.remove('auth-active-form');
+    // Prevent body scroll when modal is open
+    document.body.style.overflow = 'hidden';
+}
+
+// ========================================
+// CLOSE MODAL FUNCTIONS
+// ========================================
+
+/**
+ * Close Auth Modal (Login/Register)
+ */
+function closeAuthModal() {
+    authModalOverlay.classList.remove('auth-active');
+    // Restore body scroll
+    document.body.style.overflow = 'auto';
+}
+
+/**
+ * Close Forgot Password Modal
+ */
+function closeAuthForgotModal() {
+    authForgotModalOverlay.classList.remove('auth-active');
+    document.body.style.overflow = 'auto';
+}
+
+// ========================================
+// EVENT LISTENERS - Close Buttons
+// ========================================
+
+// Close button for main auth modal
+authCloseBtn.addEventListener('click', closeAuthModal);
+
+// Close button for forgot password modal
+authForgotCloseBtn.addEventListener('click', closeAuthForgotModal);
+
+// Close modal when clicking outside the modal box
+authModalOverlay.addEventListener('click', function(e) {
+    if (e.target === authModalOverlay) {
+        closeAuthModal();
+    }
+});
+
+authForgotModalOverlay.addEventListener('click', function(e) {
+    if (e.target === authForgotModalOverlay) {
+        closeAuthForgotModal();
+    }
+});
+
+// Close modal with Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeAuthModal();
+        closeAuthForgotModal();
+    }
+});
+
+// ========================================
+// TAB SWITCHING FUNCTIONALITY
+// ========================================
+
+// Switch to Login Tab
+authLoginTabBtn.addEventListener('click', function() {
+    // Update tab buttons
+    authLoginTabBtn.classList.add('auth-active-tab');
+    authRegisterTabBtn.classList.remove('auth-active-tab');
+    
+    // Update forms
+    authLoginForm.classList.add('auth-active-form');
+    authRegisterForm.classList.remove('auth-active-form');
+});
+
+// Switch to Register Tab
+authRegisterTabBtn.addEventListener('click', function() {
+    // Update tab buttons
+    authRegisterTabBtn.classList.add('auth-active-tab');
+    authLoginTabBtn.classList.remove('auth-active-tab');
+    
+    // Update forms
+    authRegisterForm.classList.add('auth-active-form');
+    authLoginForm.classList.remove('auth-active-form');
+});
+
+// ========================================
+// FORGOT PASSWORD LINK
+// ========================================
+
+authForgotLink.addEventListener('click', function(e) {
+    e.preventDefault();
+    // Close main auth modal
+    closeAuthModal();
+    // Open forgot password modal
+    authForgotModalOverlay.classList.add('auth-active');
+    document.body.style.overflow = 'hidden';
+});
+
+// ========================================
+// FORM SUBMISSIONS
+// Handle form submissions (customize these as needed)
+// ========================================
+
+// Login Form Submission
+authLoginForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Get form data
+    const formData = new FormData(authLoginForm);
+    const username = formData.get('login-username');
+    const password = formData.get('login-password');
+    const rememberMe = formData.get('remember-me');
+    
+    console.log('Login Form Submitted:');
+    console.log('Username:', username);
+    console.log('Password:', password);
+    console.log('Remember Me:', rememberMe ? 'Yes' : 'No');
+    
+    // TODO: Add your login API call here
+    // Example:
+    // fetch('/api/login', {
+    //     method: 'POST',
+    //     headers: { 'Content-Type': 'application/json' },
+    //     body: JSON.stringify({ username, password, rememberMe })
+    // })
+    // .then(response => response.json())
+    // .then(data => {
+    //     if (data.success) {
+    //         closeAuthModal();
+    //         window.location.href = '/dashboard';
+    //     } else {
+    //         alert('Invalid credentials');
+    //     }
+    // })
+    // .catch(error => {
+    //     console.error('Login error:', error);
+    //     alert('An error occurred during login');
+    // });
+    
+    alert('Login form submitted! Check console for details.');
+    // Remove this alert and uncomment the API call above for production
+});
+
+// Register Form Submission
+authRegisterForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Get form data
+    const formData = new FormData(authRegisterForm);
+    const username = formData.get('register-username');
+    const email = formData.get('register-email');
+    const phone = formData.get('register-phone');
+    const accountType = formData.get('account-type');
+    const termsAccepted = formData.get('terms');
+    
+    console.log('Register Form Submitted:');
+    console.log('Username:', username);
+    console.log('Email:', email);
+    console.log('Phone:', phone);
+    console.log('Account Type:', accountType);
+    console.log('Terms Accepted:', termsAccepted ? 'Yes' : 'No');
+    
+    // TODO: Add your registration API call here
+    // Example:
+    // fetch('/api/register', {
+    //     method: 'POST',
+    //     headers: { 'Content-Type': 'application/json' },
+    //     body: JSON.stringify({ 
+    //         username, 
+    //         email, 
+    //         phone, 
+    //         accountType, 
+    //         termsAccepted 
+    //     })
+    // })
+    // .then(response => response.json())
+    // .then(data => {
+    //     if (data.success) {
+    //         closeAuthModal();
+    //         alert('Registration successful! Please check your email.');
+    //     } else {
+    //         alert(data.message || 'Registration failed');
+    //     }
+    // })
+    // .catch(error => {
+    //     console.error('Registration error:', error);
+    //     alert('An error occurred during registration');
+    // });
+    
+    alert('Registration form submitted! Check console for details.');
+    // Remove this alert and uncomment the API call above for production
+});
+
+// Forgot Password Form Submission
+authForgotPasswordForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Get form data
+    const formData = new FormData(authForgotPasswordForm);
+    const email = formData.get('forgot-email');
+    
+    console.log('Forgot Password Form Submitted:');
+    console.log('Email:', email);
+    
+    // TODO: Add your forgot password API call here
+    // Example:
+    // fetch('/api/forgot-password', {
+    //     method: 'POST',
+    //     headers: { 'Content-Type': 'application/json' },
+    //     body: JSON.stringify({ email })
+    // })
+    // .then(response => response.json())
+    // .then(data => {
+    //     if (data.success) {
+    //         alert('Password reset link sent to: ' + email);
+    //         closeAuthForgotModal();
+    //     } else {
+    //         alert(data.message || 'Email not found');
+    //     }
+    // })
+    // .catch(error => {
+    //     console.error('Forgot password error:', error);
+    //     alert('An error occurred');
+    // });
+    
+    alert('Password reset link will be sent to: ' + email);
+    closeAuthForgotModal();
+    // Remove this alert and uncomment the API call above for production
+});
+
+</script>
+
+ <script src="responsive-navbar-snippet.js"></script>   
+
+
+
+</body>
+</html>

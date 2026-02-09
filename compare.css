@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #f5f5f5; /* whitesmoke */
+}
+
+/* Page Wrapper */
+.page-wrapper {
+    padding: 35px 100px 35px 100px;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    font-size: 14px;
+    margin-bottom: 15px;
+    display: flex;
+    gap: 8px;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.breadcrumb span {
+    color: #666;
+}
+
+/* Title */
+.page-title {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+/* Compare Box */
+.compare-container {
+    background: #ffffff;
+    overflow: hidden;
+}
+
+/* Rows */
+.compare-row {
+    padding: 15px 25px;
+    border-bottom: 1px solid #e5e5e5;
+    font-weight: 600;
+    background: #ffffff;
+    text-align: end;
+}
+
+/* Alternate light row */
+.compare-row:nth-child(odd) {
+    background: #f7f7f7;
+}
+
+/* Hover only on white rows */
+.compare-row:nth-child(even):hover {
+    background: #f5f5f5;
+    cursor: pointer;
+}

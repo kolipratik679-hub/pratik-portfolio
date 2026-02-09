@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Asked Questions</title>
+
+    <link rel="stylesheet" href="Frequently Asked Questions.css">
+    <link rel="stylesheet" href="bhagat.css">
+    <link rel="stylesheet" href="responsive-navbar-snippet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="header">
+  <div class="header-container">
+
+    <!-- LOGO -->
+    <div class="logo">
+      <img src="bhagat_logo_resized.png" alt="Logo">
+    </div>
+
+    <!-- NAV -->
+    <nav class="navbar">
+      <div class="navbar-header">
+        <span class="navbar-title">Menu</span>
+        <button class="navbar-close" id="navbarClose">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <ul class="nav-menu">
+
+        <li><a href="bhgat.html">Home</a></li>
+
+        <li class="dropdown">
+          <a href="About Us.html">About Us <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="Award And Certificate.html">Award And Certificate</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="Properties.html">Properties <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="Residential.html">Residential</a></li>
+            <li><a href="Commercial.html">Commercial</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="Projects.html">Projects <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="Ready to Move.html">Ready to Move</a></li>
+            <li><a href="Up Coming.html">Up Coming</a></li>
+            <li><a href="Under Construction.html">Under Construction</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="Utilities.html">Utilities <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="Emi Calculator.html">Emi Calculator</a></li>
+            <li><a href="Documents Checklist.html">Documents Checklist</a></li>
+            <li><a href="Frequently Asked Questions.html">Frequently Asked Questions</a></li>
+          </ul>
+        </li>
+
+        <li><a href="NRI Assistance.html">NRI Assistance</a></li>
+        <li><a href="Contact Us.html">Contact Us</a></li>
+
+      </ul>
+    </nav>
+
+    <!-- HAMBURGER MENU -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="header-right">
+      <div class="phone">
+        <i class="fa-solid fa-phone"></i>
+        <span class="contact-number"><a href="tel:8879535104">+91 8879535104</a></span>
+      </div>
+
+
+      <!-- USER ICON -->
+      <div class="user-icon-link">
+          <i class="fa-regular fa-user" onclick="openAuthLoginModal()" style="cursor: pointer;"></i>
+      </div>
+
+      <a href="create-listing.html" class="btn-listing">Create a Listing</a>
+    </div>
+
+  </div>
+</header>
+
+
+
+
+
+
+
+
+
+
+<!-- Modal Overlay Container -->
+<div class="auth-modal-overlay" id="authModalOverlay">
+    <!-- Modal Box -->
+    <div class="auth-modal-box">
+        <!-- Close Button -->
+        <button class="auth-close-btn" id="authCloseBtn">×</button>
+        
+        <!-- Tab Header - Login/Register Tabs -->
+        <div class="auth-tab-header">
+            <button class="auth-tab-btn auth-active-tab" id="authLoginTabBtn">Login</button>
+            <button class="auth-tab-btn" id="authRegisterTabBtn">Register</button>
+        </div>
+        
+        <!-- Form Container -->
+        <div class="auth-form-container">
+            <!-- Login Form -->
+            <form class="auth-form auth-active-form" id="authLoginForm">
+                <!-- Username/Email Input -->
+                <div class="auth-input-group">
+                    <span class="auth-input-icon">👤</span>
+                    <input 
+                        type="text" 
+                        class="auth-input-field" 
+                        placeholder="Username or Email"
+                        name="login-username"
+                        required
+                    >
+                </div>
+                
+                <!-- Password Input -->
+                <div class="auth-input-group">
+                    <span class="auth-input-icon">🔒</span>
+                    <input 
+                        type="password" 
+                        class="auth-input-field" 
+                        placeholder="Password"
+                        name="login-password"
+                        required
+                    >
+                </div>
+                
+                <!-- Remember Me & Forgot Password Row -->
+                <div class="auth-remember-row">
+                    <label class="auth-remember-label">
+                        <input type="checkbox" class="auth-remember-checkbox" name="remember-me">
+                        Remember me
+                    </label>
+                    <a href="#" class="auth-forgot-link" id="authForgotLink">Lost your password?</a>
+                </div>
+                
+                <!-- Login Button -->
+                <button type="submit" class="auth-submit-btn">Login</button>
+            </form>
+            
+            <!-- Register Form -->
+            <form class="auth-form" id="authRegisterForm">
+                <!-- Username Input -->
+                <div class="auth-input-group">
+                    <span class="auth-input-icon">👤</span>
+                    <input 
+                        type="text" 
+                        class="auth-input-field" 
+                        placeholder="Username"
+                        name="register-username"
+                        required
+                    >
+                </div>
+                
+                <!-- Email Input -->
+                <div class="auth-input-group">
+                    <span class="auth-input-icon">✉️</span>
+                    <input 
+                        type="email" 
+                        class="auth-input-field" 
+                        placeholder="Email"
+                        name="register-email"
+                        required
+                    >
+                </div>
+                
+                <!-- Phone Input -->
+                <div class="auth-input-group">
+                    <span class="auth-input-icon">📞</span>
+                    <input 
+                        type="tel" 
+                        class="auth-input-field" 
+                        placeholder="Phone"
+                        name="register-phone"
+                        required
+                    >
+                </div>
+                
+                <!-- Account Type Dropdown -->
+                <div class="auth-input-group">
+                    <select class="auth-select-field" name="account-type" required>
+                        <option value="">Select your account type</option>
+                        <option value="Agent">Agent</option>
+                        <option value="Agency">Agency</option>
+                        <option value="Owner">Owner</option>
+                        <option value="Buyer">Buyer</option>
+                        <option value="Seller">Seller</option>
+                    </select>
+                </div>
+                
+                <!-- Terms and Conditions -->
+                <label class="auth-terms-label">
+                    <input type="checkbox" class="auth-terms-checkbox" name="terms" required>
+                    <span>I agree with your <a href="bhgat.html" class="auth-terms-link" target="_blank">Terms & Conditions</a></span>
+                </label>
+                
+                <!-- Register Button -->
+                <button type="submit" class="auth-submit-btn">Register</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Forgot Password Modal -->
+<div class="auth-modal-overlay" id="authForgotModalOverlay">
+    <div class="auth-modal-box" style="max-width: 500px;">
+        <!-- Close Button -->
+        <button class="auth-close-btn auth-forgot-close-btn" id="authForgotCloseBtn">×</button>
+        
+        <!-- Forgot Password Content -->
+        <div class="auth-form-container">
+            <h2 class="auth-forgot-title">Forgot Password</h2>
+            <p class="auth-forgot-description">
+                Please enter your username or email address. You will receive a link to create a new password via email.
+            </p>
+            
+            <form id="authForgotPasswordForm">
+                <!-- Email/Username Input -->
+                <div class="auth-input-group">
+                    <input 
+                        type="text" 
+                        class="auth-input-field" 
+                        placeholder="Enter your username or email address"
+                        name="forgot-email"
+                        required
+                        style="padding-left: 15px;"
+                    >
+                </div>
+                
+                <!-- Submit Button -->
+                <button type="submit" class="auth-submit-btn">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- ===== HEADER CLOSE ===== -->
+
+
+
+
+
+<!--===== SIDE BUTTON =====-->
+<div class="fam-container" id="famMenuBox">
+
+  <!-- 📞 CALL -->
+  <a href="tel:7304810459" class="fam-menu">
+    <img class="fam-icon" src="phone png.png" alt="Call">
+  </a>
+
+  <!-- 💬 WHATSAPP -->
+  <a href="https://wa.me/917304810459" target="_blank" class="fam-menu">
+    <img class="fam-icon" src="whatsapp png.png" alt="WhatsApp">
+  </a>
+
+  <!-- 🔄 MAIN BUTTON -->
+  <div class="fam-main-wrapper" id="famMainBtn">
+
+    <!-- First Image -->
+    <img class="fam-icon fam-main" src="menu png.png">
+
+    <!-- Second Image -->
+    <img class="fam-icon fam-swap" src="cancel png.png">
+
+  </div>
+
+</div>
+
+<script>
+const famBox = document.getElementById("famMenuBox");
+const famMainBtn = document.getElementById("famMainBtn");
+
+famMainBtn.addEventListener("click", ()=>{
+  famBox.classList.toggle("fam-active");
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+<!-- MAIN -->
+<div class="faq-wrap">
+  <div class="faq-title">Frequently Asked Questions</div>
+  <div class="faq-sub">Your Mumbai Real Estate Guide</div>
+
+  <!-- SEARCH -->
+  <div class="faq-search-box">
+    <input type="text" id="faqSearch" placeholder="Search FAQ...">
+    <span class="faq-search-icon">🔍</span>
+  </div>
+
+  <!-- FAQ ITEMS -->
+  <div class="faq-item">
+    <div class="faq-question">
+      What are the current property prices in Mumbai's prime locations?
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-answer">
+      <p>
+        Property prices vary significantly across Mumbai. Prime locations like South Mumbai (Colaba, Nariman Point) range from ₹50,000-₹1,00,000 per sq ft. Bandra, Juhu command ₹30,000-₹60,000 per sq ft. Emerging areas like Powai, Thane range from ₹12,000-₹25,000 per sq ft. Prices fluctuate based on exact location, amenities, and market conditions.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      What documents do I need to buy property in Mumbai?
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-answer">
+      <ul>
+        <li>Sale Deed & Title Deed</li>
+        <li>Approved building plans</li>
+        <li>Occupancy Certificate (OC)</li>
+        <li>No Objection Certificate (NOC) from society</li>
+        <li>Property Tax receipts</li>
+        <li>Encumbrance Certificate</li>
+        <li>RERA registration certificate</li>
+        <li>Buyer's ID, address proof, and PAN card</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      How do I verify if a property is legally clear?
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-answer">
+      <p>
+        Conduct a thorough due diligence including title search, checking encumbrance certificate for 30 years, verifying approved plans with BMC, ensuring RERA registration, checking for any pending litigation, and confirming all taxes are paid. Always engage a qualified lawyer for legal verification.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      What is RERA and how does it protect buyers?
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-answer">
+      <p>
+        Real Estate Regulatory Authority (RERA) is a regulatory body that ensures transparency and accountability in real estate. It mandates project registration, protects buyer deposits in escrow accounts, ensures timely delivery, provides grievance redressal, and standardizes carpet area calculations. All projects above 500 sq meters must be RERA registered.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      What are the stamp duty and registration charges in Mumbai?
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-answer">
+      <p>
+        Stamp duty in Maharashtra is 5% for men and 4% for women. Registration charges are 1% of property value. Additional charges include municipal taxes, society transfer fees, and legal charges. These rates may change, so confirm current rates before purchase.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      Which are the best areas for investment in Mumbai?
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-answer">
+      <p>
+        Emerging investment hotspots include Navi Mumbai (good connectivity), Thane (affordable pricing), BKC (commercial hub), Powai (IT corridor), and areas along metro lines. Consider factors like infrastructure development, connectivity, future growth potential, and rental yields when choosing investment locations.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      What is the difference between carpet area, built-up area, and super built-up area?
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-answer">
+      <p>
+        Carpet area is the actual usable area within walls. Built-up area includes carpet area plus walls and balcony. Super built-up area includes built-up area plus proportionate common areas like lobby, staircase, and amenities. RERA mandates pricing based on carpet area for transparency.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      How do I get a home loan in Mumbai?
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-answer">
+      <p>
+        Apply with banks/NBFCs with documents like income proof, property papers, ID proofs. Banks offer up to 80-90% financing. Interest rates vary from 8-12%. Consider factors like processing fees, prepayment charges, and loan tenure. Compare offers from multiple lenders for the best deal.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      What are the hidden costs when buying property?
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-answer">
+      <p>
+        Hidden costs include stamp duty, registration, legal fees, home loan processing charges, property insurance, maintenance deposits, utility connections, interior costs, GST on under-construction properties, parking charges, and society membership fees. Budget 8-12% of property value for these additional costs.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      Is it better to buy under-construction or ready-to-move properties?
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-answer">
+      <p>
+        Under-construction offers lower prices, payment flexibility, and customization options but carries completion risk. Ready-to-move properties offer immediate possession, no construction delays, and clear legal status but cost more. Choose based on your timeline, risk tolerance, and budget.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      How do I check the builder's credibility?
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-answer">
+      <p>
+        Research the builder's track record, previous projects, delivery timelines, financial stability, RERA registrations, customer reviews, legal compliances, and awards. Visit their completed projects, speak with existing customers, and check with local authorities for any pending issues.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      What is the process of property registration in Mumbai?
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-answer">
+      <p>
+        After agreement execution, pay stamp duty, visit sub-registrar office with all parties, submit required documents, verify identities, complete registration formalities, and obtain registered sale deed. The process typically takes 1-2 hours at the registration office.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      Can NRIs buy property in Mumbai?
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-answer">
+      <p>
+        Yes, NRIs can purchase residential and commercial properties in Mumbai under RBI guidelines. They need NRE/NRO accounts, cannot buy agricultural land, must report to RBI for transactions above $250,000, and can repatriate sale proceeds with proper documentation.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      What are the tax implications of buying property in Mumbai?
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-answer">
+      <p>
+        Tax implications include stamp duty (4-5%), TDS on purchase (1% if above ₹50 lakhs), property tax, capital gains tax on sale, income tax on rental income, and GST on under-construction properties (5-12%). Consult a CA for specific tax planning.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      How do I calculate the rental yield on a Mumbai property?
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-answer">
+      <p>
+        Rental yield = (Annual rental income / Property cost) × 100. Mumbai typically offers 2-4% gross rental yields. Consider maintenance costs, vacancy periods, and appreciation potential. Areas like Andheri, Powai, and Thane often provide better rental yields than South Mumbai.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      What should I look for during property inspection?
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-answer">
+      <p>
+        Check structural quality, water supply, electrical fittings, ventilation, natural light, security systems, parking availability, society amenities, neighborhood infrastructure, noise levels, and compliance certificates. Consider hiring a professional inspector for technical evaluation.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      How important is the builder's possession timeline?
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-answer">
+      <p>
+        Extremely important. Delays can cost EMIs without possession, rental expenses, and price escalation. RERA mandates penalty for delays. Check builder's track record, project status, approvals in place, and realistic timelines. Include penalty clauses in agreements for delays.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      What is FSI and how does it affect property prices?
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-answer">
+      <p>
+        Floor Space Index (FSI) determines how much construction is allowed on a plot. Higher FSI allows more construction, potentially more units and amenities. Mumbai's FSI ranges from 1.33 to 4 depending on location. Higher FSI areas generally command premium prices due to better infrastructure.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      How do I negotiate property prices effectively?
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-answer">
+      <p>
+        Research market rates, check comparable properties, understand seller's urgency, negotiate beyond base price (include parking, amenities), consider total cost including hidden charges, and be prepared to walk away. Professional brokers can provide market insights and negotiation expertise.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      What are the benefits of hiring a real estate broker?
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-answer">
+      <p>
+        Brokers offer market expertise, property screening, price negotiation, legal guidance, documentation support, time saving, access to exclusive listings, and post-purchase services. They can navigate complex processes and help avoid costly mistakes, especially for first-time buyers.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      How do I verify a property's approved plans with BMC?
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-answer">
+      <p>
+        Visit the concerned BMC ward office, check online portal, verify building permissions, ensure construction matches approved plans, check for any violations or unauthorized modifications, and confirm occupancy certificate is issued. This prevents legal complications later.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      What is the importance of society NOC when buying a flat?
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-answer">
+      <p>
+        Society NOC confirms no dues pending, approves the transfer, ensures membership eligibility, and allows access to amenities. Without NOC, you cannot get society membership, leading to issues with utilities, amenities, and future resale. It's mandatory for flat purchases.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      How do Mumbai's development plans affect property prices?
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-answer">
+      <p>
+        Development plans impact infrastructure, FSI, zoning changes, and connectivity projects. Areas earmarked for metro, highways, or commercial development see price appreciation. The Draft Development Plan 2034 identifies growth corridors and can influence long-term investment decisions.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      What are the parking norms for properties in Mumbai?
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-answer">
+      <p>
+        BMC mandates minimum parking requirements: 1 space per flat up to 40 sq m, 2 spaces for larger flats. Many buildings offer additional paid parking. Parking is often sold separately and can cost ₹8-25 lakhs in premium areas. Verify parking allocation before purchase.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      How do I handle property disputes in Mumbai?
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-answer">
+      <p>
+        For property disputes, approach consumer forums, RERA authority, civil courts, or mediation centers depending on the nature. Maintain all documentation, engage qualified lawyers, explore out-of-court settlements first, and understand the legal process and timelines involved.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      What insurance should I buy for my Mumbai property?
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-answer">
+      <p>
+        Consider home insurance covering structure and contents, fire insurance (mandatory for home loans), natural disaster coverage, and public liability insurance. Given Mumbai's monsoons and urban risks, comprehensive coverage is advisable. Compare policies and exclusions carefully.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      How do I calculate the true cost of owning property in Mumbai?
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-answer">
+      <p>
+        Total cost includes purchase price, registration charges, stamp duty, loan interest, maintenance charges, property tax, insurance, repairs, and opportunity cost of capital. Factor in appreciation and rental income if applicable. Use online calculators or consult financial advisors for accurate assessment.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      What are the exit strategies for real estate investment in Mumbai?
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-answer">
+      <p>
+        Exit strategies include direct sale, rental income generation, property development, joint ventures, or converting to commercial use where permitted. Consider market timing, capital gains implications, and transaction costs. Mumbai's liquidity makes exit relatively easier than other cities.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      How has COVID-19 impacted Mumbai's real estate market?
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-answer">
+      <p>
+        COVID-19 led to temporary price corrections, increased demand for larger homes, preference for suburban locations, digital property searches, flexible payment terms, and renewed focus on health amenities. The market has shown resilience with recovery in sales volumes and prices stabilizing.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      What future infrastructure projects will benefit Mumbai real estate?
+      <span class="faq-icon">+</span>
+    </div>
+    <div class="faq-answer">
+      <p>
+        Major projects include Metro expansions, Coastal Road, Trans-Harbour Link, Bullet Train, airport expansions, and smart city initiatives. These will enhance connectivity, reduce travel times, and boost property values in connected areas. Eastern suburbs and Navi Mumbai are major beneficiaries.
+      </p>
+    </div>
+  </div>
+
+
+
+</div>
+
+<script>
+const faqItems = document.querySelectorAll(".faq-item");
+const searchInput = document.getElementById("faqSearch");
+
+/* ===== ACCORDION ===== */
+faqItems.forEach(item=>{
+  item.addEventListener("click",()=>{
+    faqItems.forEach(i=>{
+      if(i !== item) i.classList.remove("active");
+    });
+    item.classList.toggle("active");
+  });
+});
+
+/* ===== SEARCH ===== */
+searchInput.addEventListener("keyup",()=>{
+  const value = searchInput.value.toLowerCase();
+  faqItems.forEach(item=>{
+    const question = item.querySelector(".faq-question").innerText.toLowerCase();
+    item.style.display = question.includes(value) ? "block" : "none";
+  });
+});
+</script>
+<!-- MAIN END -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--===== FOOTER =====-->
+<footer>
+  <div class="footer-left">
+      © Scorpflow - All <br> rights reserved
+  </div>
+
+  <div class="footer-right">
+      <a href="bhgat.html">Home</a>
+      <a href="About Us.html">About Us</a>
+      <a href="Award And Certificate.html">Awards and Certificates</a>
+      <a href="Commercial.html">Commercial</a>
+      <a href="compare.html">Compare</a>
+      <a href="Contact Us.html">Contact Us</a>
+      <a href="Documents Checklist.html">Documents Checklist</a>
+      <a href="Emi Calculator.html">Emi Calculator</a>
+      <a href="Frequently Asked Questions.html">Frequently Asked Questions</a>
+      <a href="NRI Assistance.html">NRI Assitance</a>
+      <a href="Properties.html">Properties</a>
+      <a href="Ready to Move.html">Ready to Move</a>
+      <a href="Under Construction.html">Under Construction</a>
+      <a href="Up Coming.html">Up Coming</a>
+  </div>
+</footer>
+
+
+ <!-- USER ICON -->
+<script>
+  // USER ICON
+// ============================================
+// LOGIN/REGISTER MODAL JAVASCRIPT
+// Auth Modal System - All functionality
+// ============================================
+
+// Get all modal elements
+const authModalOverlay = document.getElementById('authModalOverlay');
+const authForgotModalOverlay = document.getElementById('authForgotModalOverlay');
+const authCloseBtn = document.getElementById('authCloseBtn');
+const authForgotCloseBtn = document.getElementById('authForgotCloseBtn');
+const authLoginTabBtn = document.getElementById('authLoginTabBtn');
+const authRegisterTabBtn = document.getElementById('authRegisterTabBtn');
+const authLoginForm = document.getElementById('authLoginForm');
+const authRegisterForm = document.getElementById('authRegisterForm');
+const authForgotLink = document.getElementById('authForgotLink');
+const authForgotPasswordForm = document.getElementById('authForgotPasswordForm');
+
+// ========================================
+// OPEN MODAL FUNCTIONS
+// ========================================
+
+/**
+ * Open Login Modal
+ * Call this function from your user icon: onclick="openAuthLoginModal()"
+ */
+function openAuthLoginModal() {
+    authModalOverlay.classList.add('auth-active');
+    // Switch to login tab
+    authLoginTabBtn.classList.add('auth-active-tab');
+    authRegisterTabBtn.classList.remove('auth-active-tab');
+    authLoginForm.classList.add('auth-active-form');
+    authRegisterForm.classList.remove('auth-active-form');
+    // Prevent body scroll when modal is open
+    document.body.style.overflow = 'hidden';
+}
+
+/**
+ * Open Register Modal
+ * Call this function if needed: onclick="openAuthRegisterModal()"
+ */
+function openAuthRegisterModal() {
+    authModalOverlay.classList.add('auth-active');
+    // Switch to register tab
+    authRegisterTabBtn.classList.add('auth-active-tab');
+    authLoginTabBtn.classList.remove('auth-active-tab');
+    authRegisterForm.classList.add('auth-active-form');
+    authLoginForm.classList.remove('auth-active-form');
+    // Prevent body scroll when modal is open
+    document.body.style.overflow = 'hidden';
+}
+
+// ========================================
+// CLOSE MODAL FUNCTIONS
+// ========================================
+
+/**
+ * Close Auth Modal (Login/Register)
+ */
+function closeAuthModal() {
+    authModalOverlay.classList.remove('auth-active');
+    // Restore body scroll
+    document.body.style.overflow = 'auto';
+}
+
+/**
+ * Close Forgot Password Modal
+ */
+function closeAuthForgotModal() {
+    authForgotModalOverlay.classList.remove('auth-active');
+    document.body.style.overflow = 'auto';
+}
+
+// ========================================
+// EVENT LISTENERS - Close Buttons
+// ========================================
+
+// Close button for main auth modal
+authCloseBtn.addEventListener('click', closeAuthModal);
+
+// Close button for forgot password modal
+authForgotCloseBtn.addEventListener('click', closeAuthForgotModal);
+
+// Close modal when clicking outside the modal box
+authModalOverlay.addEventListener('click', function(e) {
+    if (e.target === authModalOverlay) {
+        closeAuthModal();
+    }
+});
+
+authForgotModalOverlay.addEventListener('click', function(e) {
+    if (e.target === authForgotModalOverlay) {
+        closeAuthForgotModal();
+    }
+});
+
+// Close modal with Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeAuthModal();
+        closeAuthForgotModal();
+    }
+});
+
+// ========================================
+// TAB SWITCHING FUNCTIONALITY
+// ========================================
+
+// Switch to Login Tab
+authLoginTabBtn.addEventListener('click', function() {
+    // Update tab buttons
+    authLoginTabBtn.classList.add('auth-active-tab');
+    authRegisterTabBtn.classList.remove('auth-active-tab');
+    
+    // Update forms
+    authLoginForm.classList.add('auth-active-form');
+    authRegisterForm.classList.remove('auth-active-form');
+});
+
+// Switch to Register Tab
+authRegisterTabBtn.addEventListener('click', function() {
+    // Update tab buttons
+    authRegisterTabBtn.classList.add('auth-active-tab');
+    authLoginTabBtn.classList.remove('auth-active-tab');
+    
+    // Update forms
+    authRegisterForm.classList.add('auth-active-form');
+    authLoginForm.classList.remove('auth-active-form');
+});
+
+// ========================================
+// FORGOT PASSWORD LINK
+// ========================================
+
+authForgotLink.addEventListener('click', function(e) {
+    e.preventDefault();
+    // Close main auth modal
+    closeAuthModal();
+    // Open forgot password modal
+    authForgotModalOverlay.classList.add('auth-active');
+    document.body.style.overflow = 'hidden';
+});
+
+// ========================================
+// FORM SUBMISSIONS
+// Handle form submissions (customize these as needed)
+// ========================================
+
+// Login Form Submission
+authLoginForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Get form data
+    const formData = new FormData(authLoginForm);
+    const username = formData.get('login-username');
+    const password = formData.get('login-password');
+    const rememberMe = formData.get('remember-me');
+    
+    console.log('Login Form Submitted:');
+    console.log('Username:', username);
+    console.log('Password:', password);
+    console.log('Remember Me:', rememberMe ? 'Yes' : 'No');
+    
+    // TODO: Add your login API call here
+    // Example:
+    // fetch('/api/login', {
+    //     method: 'POST',
+    //     headers: { 'Content-Type': 'application/json' },
+    //     body: JSON.stringify({ username, password, rememberMe })
+    // })
+    // .then(response => response.json())
+    // .then(data => {
+    //     if (data.success) {
+    //         closeAuthModal();
+    //         window.location.href = '/dashboard';
+    //     } else {
+    //         alert('Invalid credentials');
+    //     }
+    // })
+    // .catch(error => {
+    //     console.error('Login error:', error);
+    //     alert('An error occurred during login');
+    // });
+    
+    alert('Login form submitted! Check console for details.');
+    // Remove this alert and uncomment the API call above for production
+});
+
+// Register Form Submission
+authRegisterForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Get form data
+    const formData = new FormData(authRegisterForm);
+    const username = formData.get('register-username');
+    const email = formData.get('register-email');
+    const phone = formData.get('register-phone');
+    const accountType = formData.get('account-type');
+    const termsAccepted = formData.get('terms');
+    
+    console.log('Register Form Submitted:');
+    console.log('Username:', username);
+    console.log('Email:', email);
+    console.log('Phone:', phone);
+    console.log('Account Type:', accountType);
+    console.log('Terms Accepted:', termsAccepted ? 'Yes' : 'No');
+    
+    // TODO: Add your registration API call here
+    // Example:
+    // fetch('/api/register', {
+    //     method: 'POST',
+    //     headers: { 'Content-Type': 'application/json' },
+    //     body: JSON.stringify({ 
+    //         username, 
+    //         email, 
+    //         phone, 
+    //         accountType, 
+    //         termsAccepted 
+    //     })
+    // })
+    // .then(response => response.json())
+    // .then(data => {
+    //     if (data.success) {
+    //         closeAuthModal();
+    //         alert('Registration successful! Please check your email.');
+    //     } else {
+    //         alert(data.message || 'Registration failed');
+    //     }
+    // })
+    // .catch(error => {
+    //     console.error('Registration error:', error);
+    //     alert('An error occurred during registration');
+    // });
+    
+    alert('Registration form submitted! Check console for details.');
+    // Remove this alert and uncomment the API call above for production
+});
+
+// Forgot Password Form Submission
+authForgotPasswordForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Get form data
+    const formData = new FormData(authForgotPasswordForm);
+    const email = formData.get('forgot-email');
+    
+    console.log('Forgot Password Form Submitted:');
+    console.log('Email:', email);
+    
+    // TODO: Add your forgot password API call here
+    // Example:
+    // fetch('/api/forgot-password', {
+    //     method: 'POST',
+    //     headers: { 'Content-Type': 'application/json' },
+    //     body: JSON.stringify({ email })
+    // })
+    // .then(response => response.json())
+    // .then(data => {
+    //     if (data.success) {
+    //         alert('Password reset link sent to: ' + email);
+    //         closeAuthForgotModal();
+    //     } else {
+    //         alert(data.message || 'Email not found');
+    //     }
+    // })
+    // .catch(error => {
+    //     console.error('Forgot password error:', error);
+    //     alert('An error occurred');
+    // });
+    
+    alert('Password reset link will be sent to: ' + email);
+    closeAuthForgotModal();
+    // Remove this alert and uncomment the API call above for production
+});
+
+</script>
+
+ <script src="responsive-navbar-snippet.js"></script>   
+
+
+
+</body>
+</html>

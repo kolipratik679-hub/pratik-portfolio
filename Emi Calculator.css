@@ -1,0 +1,126 @@
+/* WRAPPER */
+.pk-emi-wrapper{
+  background:#f5f5f5;
+  padding:10px 0;
+  display:flex;
+  justify-content:center;
+}
+
+.pk-emi-card:hover{
+  transform: scale(1.02);
+  transition: .4s;
+  box-shadow: 1px 1px 20px #4f8fe7,
+  inset 1px 1px 5px rgb(56, 54, 54) ;
+}
+
+/* HEADING */
+.calculator-heading{
+    text-align: center;
+    background-color: whitesmoke;
+    padding-top: 10px;
+}
+
+/* CARD */
+.pk-emi-card{
+  width:420px;
+  background:#fff;
+  border-radius:18px;
+  padding:28px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  font-family:Arial, sans-serif;
+  line-height: 1.8;
+  margin-top: 26px;
+}
+
+/* TITLE */
+.pk-emi-title{
+  text-align:center;
+  font-size:20px;
+  margin-top: -10px;
+  padding-bottom: 14px;
+}
+
+/* INPUT GROUP */
+.pk-emi-group{
+  margin-bottom:18px;
+}
+
+.pk-emi-group label{
+  font-size:14px;
+  font-weight: 600;
+  display:block;
+  margin-bottom:6px;
+  color:#333;
+}
+
+.pk-emi-group input{
+  width:100%;
+  height:48px;
+  padding:0 14px;
+  border-radius:10px;
+  border:1px solid #ccc;
+  font-size:14px;
+}
+
+.pk-emi-group input:hover{
+  box-shadow: 1px 1px 5px #4f8fe7;
+  transition: .3s;
+}
+
+/* BUTTON */
+.pk-emi-btn{
+  width:100%;
+  height:50px;
+  margin-top: 5px;
+  background:#4f8fe7;
+  border:none;
+  color:#fff;
+  font-size:16px;
+  border-radius:10px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.pk-emi-btn:hover{
+  background:#3c7ad9;
+  transform:scale(1.01);
+  box-shadow: 1px 1px 10px #4f8fe7;
+  transition: .3s;
+}
+
+/* RESULTS */
+.pk-emi-results{
+  margin-top:16px;
+  display:none;
+  animation:pkFade 0.4s ease;
+}
+
+.pk-emi-row{
+  background:#eef5ff;
+  border-left:5px solid #4f8fe7;
+  border-radius:12px;
+  padding:6px 8px;
+  margin-bottom:15px;
+  align-items: center;
+}
+
+.pk-emi-row span{
+  display:block;
+  font-size:14px;
+}
+
+.pk-emi-row strong{
+  font-size:15px;
+}
+
+@keyframes pkFade{
+  from{opacity:0; transform:translateY(8px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+/* RESPONSIVE */
+@media(max-width:480px){
+  .pk-emi-card{
+    width:95%;
+  }
+}
