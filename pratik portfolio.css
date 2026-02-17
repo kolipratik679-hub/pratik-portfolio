@@ -1,3 +1,4 @@
+
 /* ========================================
    CSS VARIABLES & COLOR SYSTEM
    ======================================== */
@@ -1278,22 +1279,53 @@ body.light-mode .theme-toggle .moon-icon {
    ======================================== */
 
 .footer {
-    background: rgba(0, 0, 0, 0.3);
-    padding: 3rem 0;
+    border-top: 2px solid rgba(248, 180, 0, 0.4);
+    color: white;
+    padding: 2rem 0 2rem;
+}
+
+.footer-content {
     text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer-text {
-    color: var(--text-primary);
-    font-weight: 600;
     font-size: 1.1rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
 }
 
-.footer-subtext {
-    color: var(--text-secondary);
-    font-size: 0.95rem;
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.social-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.3rem;
+    text-decoration: none;
+    transition: all var(--transition-normal);
+}
+
+.social-btn:hover {
+    transform: translateY(-5px) scale(1.1);
+}
+
+.instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+.facebook { background: #1877f2; }
+.twitter { background: #000000; }
+.github { background: #333333; }
+.linkedin { background: #0077b5; }
+
+.footer-copyright {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
 }
 
 /* ========================================

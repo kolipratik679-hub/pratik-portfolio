@@ -20,7 +20,7 @@
             const p2Input = document.getElementById('player2').value.trim();
 
             if (!p1Input || !p2Input) {
-                alert('कृपया दोनों players के नाम enter करें! 🎮');
+                alert('Please Enter the Player Name! 🎮');
                 return;
             }
 

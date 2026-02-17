@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pratik's Portfolio - Full Stack Developer specializing in business-focused web solutions">
+    <title>Pratik's Portfolio - Full Stack Developer</title>
+    <link rel="stylesheet" href="patya.css">
+</head>
+<body>
+    
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Header Navigation -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">Pratik</div>
+                
+                <nav class="nav-links" id="navLinks">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#skills" class="nav-link">Skills</a>
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#testimonials" class="nav-link">Testimonials</a>
+                    <a href="#blog" class="nav-link">Blog</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </nav>
+
+                <div class="header-controls">
+                    <!-- Color Palette Switcher -->
+                    <div class="palette-switcher">
+                        <button class="palette-btn" id="paletteBtn" aria-label="Change color palette">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <circle cx="12" cy="12" r="3"/>
+                                <path d="M12 2v4m0 12v4M2 12h4m12 0h4"/>
+                            </svg>
+                        </button>
+                        <div class="palette-dropdown" id="paletteDropdown">
+                            <button class="palette-option" data-palette="golden" aria-label="Golden Hour palette">
+                                <span class="palette-swatch" style="background: linear-gradient(135deg, #FFD700, #FF6B35)"></span>
+                                <span class="palette-name">Golden Hour</span>
+                            </button>
+                            <button class="palette-option" data-palette="ocean" aria-label="Ocean Blue palette">
+                                <span class="palette-swatch" style="background: linear-gradient(135deg, #00D4FF, #0066FF)"></span>
+                                <span class="palette-name">Ocean Blue</span>
+                            </button>
+                            <button class="palette-option" data-palette="purple" aria-label="Purple Haze palette">
+                                <span class="palette-swatch" style="background: linear-gradient(135deg, #A855F7, #EC4899)"></span>
+                                <span class="palette-name">Purple Haze</span>
+                            </button>
+                            <button class="palette-option" data-palette="green" aria-label="Green Tech palette">
+                                <span class="palette-swatch" style="background: linear-gradient(135deg, #10B981, #059669)"></span>
+                                <span class="palette-name">Green Tech</span>
+                            </button>
+                            <button class="palette-option" data-palette="sunset" aria-label="Sunset Orange palette">
+                                <span class="palette-swatch" style="background: linear-gradient(135deg, #F97316, #DC2626)"></span>
+                                <span class="palette-name">Sunset Orange</span>
+                            </button>
+                            <button class="palette-option" data-palette="mint" aria-label="Cool Mint palette">
+                                <span class="palette-swatch" style="background: linear-gradient(135deg, #06B6D4, #14B8A6)"></span>
+                                <span class="palette-name">Cool Mint</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Theme Toggle -->
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                        <svg class="sun-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"/>
+                            <line x1="12" y1="1" x2="12" y2="3"/>
+                            <line x1="12" y1="21" x2="12" y2="23"/>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                            <line x1="1" y1="12" x2="3" y2="12"/>
+                            <line x1="21" y1="12" x2="23" y2="12"/>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                        </svg>
+                        <svg class="moon-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                        </svg>
+                    </button>
+
+                    <!-- Hamburger Menu -->
+                    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobileMenu">
+        <nav class="mobile-nav">
+            <a href="#home" class="mobile-link">Home</a>
+            <a href="#about" class="mobile-link">About</a>
+            <a href="#skills" class="mobile-link">Skills</a>
+            <a href="#projects" class="mobile-link">Projects</a>
+            <a href="#testimonials" class="mobile-link">Testimonials</a>
+            <a href="#blog" class="mobile-link">Blog</a>
+            <a href="#contact" class="mobile-link">Contact</a>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-background">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-left">
+                    <div class="hero-image-wrapper">
+                        <div class="loader-ring">
+                            <svg viewBox="0 0 200 200">
+                                <defs>
+                                    <linearGradient id="loaderGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:var(--primary-color);stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:var(--accent-color);stop-opacity:1" />
+                                    </linearGradient>
+                                </defs>
+                                <circle cx="100" cy="100" r="90" fill="none" stroke="url(#loaderGradient)" stroke-width="8" stroke-dasharray="565" stroke-dashoffset="0" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <img src="pratik image.png" alt="Pratik - Full Stack Developer" class="hero-image">
+                    </div>
+                </div>
+
+                <div class="hero-right">
+                    <h1 class="hero-title">
+                        <span class="title-line">Pratik's Portfolio</span>
+                    </h1>
+                    <div class="hero-subtitle">
+                        <span class="typing-text" id="typingText"></span>
+                        <span class="cursor">|</span>
+                    </div>
+                    <div class="hero-cta">
+                        <a href="#projects" class="btn btn-primary">View Projects</a>
+                        <a href="resume.pdf" download class="btn btn-secondary">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                <polyline points="7 10 12 15 17 10"/>
+                                <line x1="12" y1="15" x2="12" y2="3"/>
+                            </svg>
+                            Download Resume
+                        </a>
+                        <a href="#contact" class="btn btn-outline">Contact Me</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about-section" id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <p class="about-text">
+                    I'm a passionate <strong>Full Stack Developer</strong> with a strong foundation in frontend technologies including HTML5, CSS3, and JavaScript. Currently expanding my expertise into backend development with PHP and MySQL, I focus on creating clean, efficient, and business-ready web solutions.
+                </p>
+                <p class="about-text">
+                    I leverage <strong>AI-assisted development</strong> to accelerate my workflow and stay ahead of industry trends. My approach combines modern UI/UX principles with solid coding practices to deliver websites that don't just look good—they drive real business results.
+                </p>
+                <p class="about-text">
+                    As a fast learner with a business-focused mindset, I'm committed to building web experiences that solve real-world problems and create value for users and stakeholders alike.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section skills-section" id="skills">
+        <div class="container">
+            <h2 class="section-title">Skills & Technologies</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+                            <polyline points="2 17 12 22 22 17"/>
+                            <polyline points="2 12 12 17 22 12"/>
+                        </svg>
+                    </div>
+                    <h3 class="skill-title">HTML5</h3>
+                    <p class="skill-desc">Semantic markup, accessibility, and modern web standards</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <path d="M3 9h18"/>
+                            <path d="M9 21V9"/>
+                        </svg>
+                    </div>
+                    <h3 class="skill-title">CSS3</h3>
+                    <p class="skill-desc">Flexbox, Grid, responsive design, and modern animations</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="16 18 22 12 16 6"/>
+                            <polyline points="8 6 2 12 8 18"/>
+                        </svg>
+                    </div>
+                    <h3 class="skill-title">JavaScript</h3>
+                    <p class="skill-desc">DOM manipulation, ES6+, functions, and interactive features</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <ellipse cx="12" cy="5" rx="9" ry="3"/>
+                            <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
+                            <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+                        </svg>
+                    </div>
+                    <h3 class="skill-title">PHP</h3>
+                    <p class="skill-desc">Server-side scripting, backend logic, and API development</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <line x1="3" y1="9" x2="21" y2="9"/>
+                            <line x1="9" y1="21" x2="9" y2="9"/>
+                        </svg>
+                    </div>
+                    <h3 class="skill-title">MySQL</h3>
+                    <p class="skill-desc">Database design, queries, and data management</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="3"/>
+                            <path d="M12 1v6m0 6v6"/>
+                            <path d="M17 3.34L13 12l4 8.66"/>
+                            <path d="M7 3.34L11 12l-4 8.66"/>
+                        </svg>
+                    </div>
+                    <h3 class="skill-title">Git & GitHub</h3>
+                    <p class="skill-desc">Version control, collaboration, and code management</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                        </svg>
+                    </div>
+                    <h3 class="skill-title">Web Security</h3>
+                    <p class="skill-desc">Input validation, secure authentication, and best practices</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section projects-section" id="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+
+                <!-- CARD 1 -->
+                <a href="result calculator.html" class="card-link">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="result calculator.png" alt="Student Result Management System">
+                        <div class="project-overlay">
+                            <button class="btn btn-primary">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Student Result Management System</h3>
+                        <p class="project-desc">Full-featured web application for managing student records, grades, and generating reports with secure authentication.</p>
+                        <div class="project-tags">
+                            <span class="tag">PHP</span>
+                            <span class="tag">MySQL</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+                </a>
+
+                <!-- CARD 2 -->
+                <a href="calculator.html" class="card-link">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="calculator.png" alt="Calculator App">
+                        <div class="project-overlay">
+                            <button class="btn btn-primary">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Advanced Calculator App</h3>
+                        <p class="project-desc">Modern calculator with scientific functions, history tracking, and beautiful UI built with vanilla JavaScript.</p>
+                        <div class="project-tags">
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">CSS3</span>
+                            <span class="tag">HTML5</span>
+                        </div>
+                    </div>
+                </div>
+                </a>
+
+                <!-- CARD 3 -->
+                <a href="pratik portfolio.html" class="card-link">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="pratik portfolio.png" alt="Portfolio Website">
+                        <div class="project-overlay">
+                            <button class="btn btn-primary">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Interactive Portfolio Website</h3>
+                        <p class="project-desc">Fully responsive portfolio with smooth animations, dark mode, and advanced UI interactions.</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML5</span>
+                            <span class="tag">CSS3</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+                </a>
+
+                <!-- CARD 4 -->
+                 <a href="bhgat.html" class="card-link">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="bhagat realestate.png" alt="Business Landing Page">
+                        <div class="project-overlay">
+                            <button class="btn btn-primary">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Business Landing Page</h3>
+                        <p class="project-desc">High-converting landing page with modern design, optimized performance, and contact form integration.</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML5</span>
+                            <span class="tag">CSS3</span>
+                            <span class="tag">PHP</span>
+                        </div>
+                    </div>
+                </div>
+                </a>
+
+                <!-- CARD 5 -->
+
+
+                <!-- CARD 6 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Me Section -->
+    <section class="section why-section">
+        <div class="container">
+            <h2 class="section-title">Why Choose Me</h2>
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="16 18 22 12 16 6"/>
+                            <polyline points="8 6 2 12 8 18"/>
+                        </svg>
+                    </div>
+                    <h3 class="why-title">Clean Code Architecture</h3>
+                    <p class="why-desc">Well-structured, maintainable code following industry best practices and modern standards.</p>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <path d="M3 9h18"/>
+                            <path d="M9 21V9"/>
+                        </svg>
+                    </div>
+                    <h3 class="why-title">Modern UI/UX Design</h3>
+                    <p class="why-desc">Beautiful, intuitive interfaces that enhance user experience and drive engagement.</p>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>
+                    </div>
+                    <h3 class="why-title">Fast Learner & Adapter</h3>
+                    <p class="why-desc">Quickly master new technologies and adapt to evolving project requirements.</p>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                            <line x1="12" y1="22.08" x2="12" y2="12"/>
+                        </svg>
+                    </div>
+                    <h3 class="why-title">Business-Ready Mindset</h3>
+                    <p class="why-desc">Focus on delivering solutions that create real value and drive business goals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials-section" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Clients Say</h2>
+            <div class="testimonials-wrapper">
+                <button class="testimonial-nav prev" id="prevTestimonial" aria-label="Previous testimonial">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="15 18 9 12 15 6"/>
+                    </svg>
+                </button>
+
+                <div class="testimonials-container" id="testimonialsContainer">
+                    <div class="testimonial-card active">
+                        <div class="testimonial-header">
+                            <img src="assets/client1.jpg" alt="Sarah Johnson" class="testimonial-avatar">
+                            <div class="testimonial-info">
+                                <h3 class="testimonial-name">Sarah Johnson</h3>
+                                <p class="testimonial-role">CEO, TechStart Inc.</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                        </div>
+                        <p class="testimonial-text">
+                            "Pratik delivered an exceptional website that exceeded our expectations. His attention to detail and understanding of our business needs made the entire process smooth and professional."
+                        </p>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <img src="assets/client2.jpg" alt="Michael Chen" class="testimonial-avatar">
+                            <div class="testimonial-info">
+                                <h3 class="testimonial-name">Michael Chen</h3>
+                                <p class="testimonial-role">Marketing Director, GrowthLab</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                        </div>
+                        <p class="testimonial-text">
+                            "Working with Pratik was a game-changer for our online presence. He created a modern, responsive website that perfectly represents our brand and drives conversions."
+                        </p>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <img src="assets/client3.jpg" alt="Emily Rodriguez" class="testimonial-avatar">
+                            <div class="testimonial-info">
+                                <h3 class="testimonial-name">Emily Rodriguez</h3>
+                                <p class="testimonial-role">Founder, Creative Studio</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                        </div>
+                        <p class="testimonial-text">
+                            "Pratik's technical skills combined with his business acumen resulted in a website that not only looks stunning but also performs exceptionally well. Highly recommended!"
+                        </p>
+                    </div>
+                </div>
+
+                <button class="testimonial-nav next" id="nextTestimonial" aria-label="Next testimonial">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9 18 15 12 9 6"/>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="testimonial-dots" id="testimonialDots">
+                <button class="dot active" data-index="0" aria-label="Go to testimonial 1"></button>
+                <button class="dot" data-index="1" aria-label="Go to testimonial 2"></button>
+                <button class="dot" data-index="2" aria-label="Go to testimonial 3"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="section blog-section" id="blog">
+        <div class="container">
+            <h2 class="section-title">Latest Articles</h2>
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="assets/blog1.jpg" alt="Modern Web Development Trends">
+                        <span class="blog-category">Web Development</span>
+                    </div>
+                    <div class="blog-content">
+                        <time class="blog-date">January 15, 2026</time>
+                        <h3 class="blog-title">Modern Web Development Trends in 2026</h3>
+                        <p class="blog-excerpt">Explore the latest trends shaping web development, from AI-assisted coding to performance optimization techniques.</p>
+                        <a href="#" class="blog-link">Read More →</a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="assets/blog2.jpg" alt="Building Responsive Websites">
+                        <span class="blog-category">CSS</span>
+                    </div>
+                    <div class="blog-content">
+                        <time class="blog-date">January 8, 2026</time>
+                        <h3 class="blog-title">Mastering Responsive Design with CSS Grid</h3>
+                        <p class="blog-excerpt">Learn how to create flexible, responsive layouts using CSS Grid and modern layout techniques.</p>
+                        <a href="#" class="blog-link">Read More →</a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="assets/blog3.jpg" alt="JavaScript Performance">
+                        <span class="blog-category">JavaScript</span>
+                    </div>
+                    <div class="blog-content">
+                        <time class="blog-date">December 28, 2025</time>
+                        <h3 class="blog-title">JavaScript Performance Optimization Tips</h3>
+                        <p class="blog-excerpt">Discover practical strategies to improve your JavaScript code performance and user experience.</p>
+                        <a href="#" class="blog-link">Read More →</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact-section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-wrapper">
+                <div class="contact-form-container">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                            <span class="error-message" id="nameError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                            <span class="error-message" id="emailError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <span class="error-message" id="messageError"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-submit">
+                            <span class="btn-text">Send Message</span>
+                            <span class="btn-loading">
+                                <svg class="spinner" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                </svg>
+                            </span>
+                        </button>
+
+                        <div class="form-message" id="formMessage"></div>
+                    </form>
+                </div>
+
+                <div class="contact-buttons">
+                    <a href="mailto:your.email@example.com" class="contact-btn email-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                        <span>Email Me</span>
+                    </a>
+
+                    <a href="https://wa.me/7304810459" target="_blank" class="contact-btn whatsapp-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                        </svg>
+                        <span>WhatsApp Me</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://instagram.com/yourprofile" target="_blank" class="social-link" aria-label="Instagram">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="none" stroke="var(--bg-color)" stroke-width="2"/>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="var(--bg-color)" stroke-width="2"/>
+                        </svg>
+                    </a>
+
+                    <a href="https://facebook.com/yourprofile" target="_blank" class="social-link" aria-label="Facebook">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                        </svg>
+                    </a>
+
+                    <a href="https://twitter.com/yourprofile" target="_blank" class="social-link" aria-label="X (Twitter)">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
+
+                    <a href="https://github.com/yourprofile" target="_blank" class="social-link" aria-label="GitHub">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+
+                    <a href="https://linkedin.com/in/yourprofile" target="_blank" class="social-link" aria-label="LinkedIn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                            <rect x="2" y="9" width="4" height="12"/>
+                            <circle cx="4" cy="4" r="2"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <p class="copyright">© 2026 Pratik. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="patya.js"></script>
+</body>
+</html>
